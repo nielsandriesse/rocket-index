@@ -13,7 +13,7 @@ const FilterButton: FunctionComponent<Props> = ({ label, isMenuExpanded, onClick
       className='flex flex-row items-center gap-2 cursor-pointer select-none'
       onClick={onClick}
     >
-      <span className='text-sm'>{ label.toUpperCase() }</span>
+      <span className='text-xs'>{ label.toUpperCase() }</span>
       <NavArrowDown width='20px' height='20px' className={`transition-transform duration-300 ${ isMenuExpanded ? 'rotate-180' : '' }`} />
     </div>
   );

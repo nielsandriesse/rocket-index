@@ -1,3 +1,10 @@
+import { DropdownMenuItem } from "@/app/components/DropdownMenu";
+
+export const allRegions: DropdownMenuItem[] = [
+  { label: 'Europe', value: 'europe' },
+  { label: 'United States', value: 'united-states' },
+  { label: 'China', value: 'china' },
+];
 
 export type RegionImageData = {
   url: string;

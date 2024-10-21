@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 
 import VehicleView from './VehicleView';
 
+import { providers } from '@/data/Providers';
 import { vehicles } from '@/data/Vehicles';
 
 type Props = {
@@ -9,15 +10,24 @@ type Props = {
   selectedStatuses: string[];
   selectedPayloadCapacities: string[];
   selectedReusabilityLevels: string[];
+  selectedRegions: string[];
 }
 
-const DataView: FunctionComponent<Props> = ({ selectedProviders, selectedStatuses, selectedPayloadCapacities, selectedReusabilityLevels }) => {
+const VehicleList: FunctionComponent<Props> = ({
+  selectedProviders,
+  selectedStatuses,
+  selectedPayloadCapacities,
+  selectedReusabilityLevels,
+  selectedRegions,
+}) => {
 
   const filteredVehicles = vehicles.filter((vehicle) => {
+    const provider = providers.find((provider) => provider.id === vehicle.provider)!;
     return selectedProviders.includes(vehicle.provider)
       && selectedStatuses.includes(vehicle.status)
       && selectedPayloadCapacities.includes(vehicle.payloadCapacity)
-      && selectedReusabilityLevels.includes(vehicle.reusabilityLevel);
+      && selectedReusabilityLevels.includes(vehicle.reusabilityLevel)
+      && provider.regions.some((region) => selectedRegions.includes(region));
   });
 
   return (
@@ -27,4 +37,4 @@ const DataView: FunctionComponent<Props> = ({ selectedProviders, selectedStatuse
   );
 }
 
-export default DataView;
+export default VehicleList;
