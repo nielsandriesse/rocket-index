@@ -24,7 +24,7 @@ type Props = {
   setSelectedRegions: (regions: string[]) => void;
 }
 
-const TopBar: FunctionComponent<Props> = ({
+const Header: FunctionComponent<Props> = ({
   selectedProviders,
   setSelectedProviders,
   selectedStatuses,
@@ -37,17 +37,20 @@ const TopBar: FunctionComponent<Props> = ({
   setSelectedRegions,
 }) => {
   return (
-    <div className='h-[48px] flex flex-row items-center border-b border-b-[#FFFFFF33] pl-8 pr-2 gap-8'>
-      <FilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
-      <FilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
-      <FilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
-      <FilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
-      <FilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
+    <div className='h-[48px] flex flex-row items-center justify-between border-b border-b-[#FFFFFF33] px-8 gap-8'>
+      <div className='flex flex-row items-center gap-8'>
+        <FilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
+        <FilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
+        <FilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
+        <FilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
+        <FilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
+      </div>
+      <span className='text-sm font-bold'>Rocket Index</span>
     </div>
   );
 }
 
-// Foo
+// Filter View
 
 type FilterViewProps = {
   label: string;
@@ -74,4 +77,4 @@ const FilterView: FunctionComponent<FilterViewProps> = ({ label, items, selected
   )
 }
 
-export default TopBar;
+export default Header;

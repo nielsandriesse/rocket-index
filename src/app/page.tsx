@@ -2,8 +2,9 @@
 
 import { FunctionComponent, useState } from 'react';
 
+import Footer from './components/Footer';
+import Header from './components/Header';
 import VehicleList from './components/VehicleList';
-import TopBar from './components/TopBar';
 
 import { allPayloadCapacities } from '@/data/PayloadCapacities';
 import { allRegions } from '@/data/Regions';
@@ -21,7 +22,7 @@ const App: FunctionComponent = () => {
 
   return (
     <div className='flex flex-col w-full h-full'>
-      <TopBar
+      <Header
         selectedProviders={selectedProviders}
         setSelectedProviders={setSelectedProviders}
         selectedStatuses={selectedStatuses}
@@ -40,6 +41,7 @@ const App: FunctionComponent = () => {
         selectedReusabilityLevels={selectedReusabilityLevels}
         selectedRegions={selectedRegions}
       />
+      <Footer />
     </div>
   );
 }
