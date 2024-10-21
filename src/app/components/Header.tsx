@@ -2,7 +2,6 @@ import useOutsideClick from '@rooks/use-outside-click'
 
 import { FunctionComponent, useRef, useState } from 'react';
 import { Menu } from 'iconoir-react';
-import { useMediaQuery } from 'react-responsive';
 
 import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
 import FilterButton from './FilterButton';
@@ -38,28 +37,27 @@ const Header: FunctionComponent<Props> = ({
   selectedRegions,
   setSelectedRegions,
 }) => {
-  const isLargeScreen = useMediaQuery({ query: '(min-width: 1024px)' });
-  if (isLargeScreen) {
-    return (
-      <div className='h-[48px] flex flex-row items-center justify-between border-b border-b-[#FFFFFF33] px-8 gap-8'>
-        <div className='flex flex-row items-center gap-8'>
-          <FilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
-          <FilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
-          <FilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
-          <FilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
-          <FilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
-        </div>
-        <span className='text-xs font-bold'>ROCKET INDEX</span>
+  const [isMenuExpanded, setIsMenuExpanded] = useState(false);
+  return (
+    <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-[#FFFFFF33] px-4 lg:px-8 gap-4 lg:gap-8'>
+      <div className='hidden lg:flex flex-row items-center gap-8'>
+        <FilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
+        <FilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
+        <FilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
+        <FilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
+        <FilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
       </div>
-    );
-  } else {
-    return (
-      <div className='h-[48px] flex flex-row items-center justify-between border-b border-b-[#FFFFFF33] px-4 gap-8'>
-        <Menu color='var(--foreground)' width='20px' height='20px' />
-        <span className='text-xs font-bold'>ROCKET INDEX</span>
+      <Menu color='var(--foreground)' width='20px' height='20px' className='lg:hidden cursor-pointer' onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
+      <span className='text-xs font-bold select-none'>ROCKET INDEX</span>
+      <div className={`absolute lg:hidden top-full left-0 w-full h-[calc(100dvh-48px)] bg-background transition-transform duration-300 px-[18px] py-2 flex flex-col gap-4 ${ isMenuExpanded ? '-translate-x-full' : 'translate-x-0' }`}>
+        <span>Provider</span>
+        <span>Status</span>
+        <span>Payload Capacity</span>
+        <span>Reusability Level</span>
+        <span>Region</span>
       </div>
-    );
-  }
+    </div>
+  );
 }
 
 // Filter View
