@@ -1,6 +1,8 @@
 import useOutsideClick from '@rooks/use-outside-click'
 
 import { FunctionComponent, useRef, useState } from 'react';
+import { Menu } from 'iconoir-react';
+import { useMediaQuery } from 'react-responsive';
 
 import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
 import FilterButton from './FilterButton';
@@ -36,18 +38,28 @@ const Header: FunctionComponent<Props> = ({
   selectedRegions,
   setSelectedRegions,
 }) => {
-  return (
-    <div className='h-[48px] flex flex-row items-center justify-between border-b border-b-[#FFFFFF33] px-8 gap-8'>
-      <div className='flex flex-row items-center gap-8'>
-        <FilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
-        <FilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
-        <FilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
-        <FilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
-        <FilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
+  const isLargeScreen = useMediaQuery({ query: '(min-width: 1024px)' });
+  if (isLargeScreen) {
+    return (
+      <div className='h-[48px] flex flex-row items-center justify-between border-b border-b-[#FFFFFF33] px-8 gap-8'>
+        <div className='flex flex-row items-center gap-8'>
+          <FilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
+          <FilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
+          <FilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
+          <FilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
+          <FilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
+        </div>
+        <span className='text-xs font-bold'>ROCKET INDEX</span>
       </div>
-      <span className='text-sm font-bold'>Rocket Index</span>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className='h-[48px] flex flex-row items-center justify-between border-b border-b-[#FFFFFF33] px-4 gap-8'>
+        <Menu color='var(--foreground)' width='20px' height='20px' />
+        <span className='text-xs font-bold'>ROCKET INDEX</span>
+      </div>
+    );
+  }
 }
 
 // Filter View
@@ -68,7 +80,7 @@ const FilterView: FunctionComponent<FilterViewProps> = ({ label, items, selected
     <div ref={ref} className='relative h-full flex flex-row items-center'>
       <FilterButton label={label} isMenuExpanded={isMenuExpanded} onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
       <DropdownMenu
-        className={`w-[200px] absolute top-[56px] -left-4 ${ isMenuExpanded ? 'visible' : 'hidden' }`}
+        className={`w-[200px] absolute top-[50px] -left-4 ${ isMenuExpanded ? 'visible' : 'hidden' }`}
         items={ items.map((item) => ({ label: item.label, value: item.value })) }
         selectedItems={selectedItems}
         onItemsSelected={setSelectedItems}

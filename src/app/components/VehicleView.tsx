@@ -29,16 +29,16 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle }) => {
   }
 
   return (
-    <div className='relative w-1/2 h-[calc((100dvh-48px)/2)] cursor-pointer' onClick={() => window.open(vehicle.website, '_blank')}>
+    <div className='relative w-full lg:w-1/2 h-[calc((100dvh-48px)/2)] cursor-pointer' onClick={() => window.open(vehicle.website, '_blank')}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={vehicle.image} alt={vehicle.name} className='absolute top-0 left-0 w-full h-full object-cover select-none' draggable="false" />
-      <div className='absolute bottom-0 left-0 w-full h-1/4 flex flex-col p-8 bg-[#00000080] text-white'>
+      <div className='absolute bottom-0 left-0 w-full h-1/4 flex flex-col justify-center p-4 lg:p-8 bg-[#00000080] text-white'>
         <div className='flex flex-row items-center justify-between gap-8'>
           <span className='h-[24px] text-base font-bold select-none'>{ vehicle.name.toUpperCase() }</span>
           <Badge label={status.label.toUpperCase()} color={statusColor} />
         </div>
         <div className='flex flex-row items-center justify-between gap-8'>
-          <span className='h-[24px] text-base select-none'>{ provider.name.toUpperCase() }</span>
+          <span className='h-[24px] text-sm lg:text-base select-none truncate'>{ provider.name.toUpperCase() }</span>
           <Badge label={payloadCapacity.label.toUpperCase()} color='#09bc62' />
         </div>
         <div className='flex flex-row items-center justify-between gap-8'>
