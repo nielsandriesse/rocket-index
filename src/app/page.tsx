@@ -14,6 +14,7 @@ import { providers } from '@/data/Providers';
 
 const App: FunctionComponent = () => {
 
+  const [isMenuExpanded, setIsMenuExpanded] = useState(false);
   const [selectedProviders, setSelectedProviders] = useState<string[]>(providers.map((provider) => provider.id));
   const [selectedStatuses, setSelectedStatuses] = useState<string[]>(allStatuses.map((status) => status.value));
   const [selectedPayloadCapacities, setSelectedPayloadCapacities] = useState<string[]>(allPayloadCapacities.map((payloadCapacity) => payloadCapacity.value));
@@ -23,6 +24,8 @@ const App: FunctionComponent = () => {
   return (
     <div className='flex flex-col w-full h-full'>
       <Header
+        isMenuExpanded={isMenuExpanded}
+        setIsMenuExpanded={setIsMenuExpanded}
         selectedProviders={selectedProviders}
         setSelectedProviders={setSelectedProviders}
         selectedStatuses={selectedStatuses}
@@ -35,6 +38,7 @@ const App: FunctionComponent = () => {
         setSelectedRegions={setSelectedRegions}
       />
       <VehicleList
+        isMenuExpanded={isMenuExpanded}
         selectedProviders={selectedProviders}
         selectedStatuses={selectedStatuses}
         selectedPayloadCapacities={selectedPayloadCapacities}
