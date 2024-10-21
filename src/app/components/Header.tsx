@@ -42,8 +42,8 @@ const Header: FunctionComponent<Props> = ({
   setSelectedRegions,
 }) => {
   return (
-    <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-[#FFFFFF33] px-4 lg:px-8 gap-4 lg:gap-8'>
-      <div className='hidden lg:flex flex-row items-center gap-8'>
+    <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 px-4 lg:px-8 gap-4 lg:gap-8'>
+      <div className='hidden lg:flex flex-row items-center gap-8 h-full'>
         <DesktopFilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
         <DesktopFilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
         <DesktopFilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
@@ -81,7 +81,7 @@ const DesktopFilterView: FunctionComponent<DesktopFilterViewProps> = ({ label, i
     <div ref={ref} className='relative h-full flex flex-row items-center'>
       <FilterButton label={label} isMenuExpanded={isMenuExpanded} onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
       <DropdownMenu
-        className={`w-[200px] absolute top-[50px] -left-4 ${ isMenuExpanded ? 'visible' : 'hidden' }`}
+        className={`w-[200px] absolute top-[47px] left-[-18px] ${ isMenuExpanded ? 'visible' : 'hidden' }`}
         items={ items.map((item) => ({ label: item.label, value: item.value })) }
         selectedItems={selectedItems}
         onItemsSelected={setSelectedItems}
@@ -99,7 +99,7 @@ type MobileFilterViewProps = {
   setSelectedItems: (items: string[]) => void;
 }
 
-const MobileFilterView: FunctionComponent<DesktopFilterViewProps> = ({ label, items, selectedItems, setSelectedItems }) => {
+const MobileFilterView: FunctionComponent<MobileFilterViewProps> = ({ label, items, selectedItems, setSelectedItems }) => {
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
   return (
     <div className={`flex flex-col ${ isMenuExpanded ? '' : 'mb-4' }`}>

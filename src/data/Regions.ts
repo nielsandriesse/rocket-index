@@ -1,10 +1,10 @@
 import { DropdownMenuItem } from "@/app/components/DropdownMenu";
 
-export const allRegions: DropdownMenuItem[] = [
+export const allRegions = [
   { label: 'Europe', value: 'europe' },
   { label: 'United States', value: 'united-states' },
   { label: 'China', value: 'china' },
-];
+].sort((a, b) => a.label.localeCompare(b.label)) as DropdownMenuItem[];
 
 export type RegionImageData = {
   url: string;

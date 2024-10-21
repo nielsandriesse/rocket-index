@@ -6,7 +6,7 @@ export type Provider = {
   regions: ('europe' | 'united-states' | 'china')[];
 }
 
-export const providers: Provider[] = [
+export const providers = [
   {
     id: 'spacex',
     name: 'SpaceX',
@@ -37,4 +37,4 @@ export const providers: Provider[] = [
     website: 'https://en.wikipedia.org/wiki/China_National_Space_Administration',
     regions: [ 'china' ],
   },
-];
+].sort((a, b) => a.name.localeCompare(b.name)) as Provider[];
