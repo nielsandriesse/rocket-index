@@ -3,7 +3,7 @@ export type Provider = {
   id: string;
   name: string;
   website: string;
-  regions: ('europe' | 'united-states' | 'china')[];
+  regions: ('european-union' | 'united-states' | 'china')[];
 }
 
 export const providers = [
@@ -14,22 +14,28 @@ export const providers = [
     regions: [ 'united-states' ],
   },
   {
+    id: 'blue-origin',
+    name: 'Blue Origin',
+    website: 'https://www.blueorigin.com/',
+    regions: [ 'united-states' ],
+  },
+  {
     id: 'pld-space',
     name: 'PLD Space',
     website: 'https://www.pldspace.com/',
-    regions: [ 'europe' ],
+    regions: [ 'european-union' ],
   },
   {
     id: 'rocket-factory-augsburg',
     name: 'Rocket Factory Augsburg',
     website: 'https://www.rfa.space/',
-    regions: [ 'europe' ],
+    regions: [ 'european-union' ],
   },
   {
     id: 'arianespace',
     name: 'Arianespace',
     website: 'https://www.arianespace.com/',
-    regions: [ 'europe' ],
+    regions: [ 'european-union' ],
   },
   {
     id: 'china-national-space-administration',

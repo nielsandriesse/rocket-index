@@ -2,7 +2,7 @@
 export type Vehicle = {
   id: string;
   name: string;
-  provider: 'spacex' | 'pld-space' | 'rocket-factory-augsburg' | 'arianespace' | 'china-national-space-administration';
+  provider: 'spacex' | 'blue-origin' | 'pld-space' | 'rocket-factory-augsburg' | 'arianespace' | 'china-national-space-administration';
   image: string;
   status: 'operational' | 'in-development';
   payloadCapacity: 'small-lift' | 'medium-lift' | 'heavy-lift' | 'super-heavy-lift';
@@ -12,6 +12,26 @@ export type Vehicle = {
 
 export const vehicles: Vehicle[] = [
   {
+    id: 'falcon-9',
+    name: 'Falcon 9',
+    provider: 'spacex',
+    image: 'https://www.spacex.com/static/images/falcon-9/refresh/F9_DM2_LAUNCH_3840x2560.jpg',
+    status: 'operational',
+    payloadCapacity: 'medium-lift',
+    reusabilityLevel: 'partially-reusable',
+    website: 'https://www.spacex.com/vehicles/falcon-9/',
+  },
+  {
+    id: 'falcon-heavy',
+    name: 'Falcon Heavy',
+    provider: 'spacex',
+    image: 'https://www.spacex.com/static/images/backgrounds/fh_feature.jpg',
+    status: 'operational',
+    payloadCapacity: 'heavy-lift',
+    reusabilityLevel: 'partially-reusable',
+    website: 'https://www.spacex.com/vehicles/falcon-heavy/',
+  },
+  {
     id: 'starship',
     name: 'Starship',
     provider: 'spacex',
@@ -20,6 +40,16 @@ export const vehicles: Vehicle[] = [
     payloadCapacity: 'super-heavy-lift',
     reusabilityLevel: 'fully-reusable',
     website: 'https://www.spacex.com/vehicles/starship/',
+  },
+  {
+    id: 'new-glenn',
+    name: 'New Glenn',
+    provider: 'blue-origin',
+    image: 'https://d3ezn0y6hdgq62.cloudfront.net/itt_newglenn_home-hero.png',
+    status: 'in-development',
+    payloadCapacity: 'heavy-lift',
+    reusabilityLevel: 'partially-reusable',
+    website: 'https://www.blueorigin.com/new-glenn',
   },
   { 
     id: 'miura-1',
@@ -42,14 +72,34 @@ export const vehicles: Vehicle[] = [
     website: 'https://pldspace.com/en/miura-5',
   },
   {
-    id: 'ariane-6',
-    name: 'Ariane 6',
-    provider: 'arianespace',
-    image: 'https://ariane.group/app/uploads/sites/4/2024/09/D‚collage-VA262-AG-cover.jpg.webp',
-    status: 'operational',
-    payloadCapacity: 'heavy-lift', // 21,500 kg to LEO in A64 configuration
-    reusabilityLevel: 'non-reusable',
-    website: 'https://www.arianespace.com/ariane-6/',
+    id: 'miura-next',
+    name: 'Miura Next',
+    provider: 'pld-space',
+    image: 'https://pldspace.com/images/vehiculos/next/vuelo.jpg',
+    status: 'in-development',
+    payloadCapacity: 'medium-lift',
+    reusabilityLevel: 'partially-reusable',
+    website: 'https://pldspace.com/en/miura-next',
+  },
+  {
+    id: 'miura-next-heavy',
+    name: 'Miura Next Heavy',
+    provider: 'pld-space',
+    image: 'https://pldspace.com/images/vehiculos/heavy/banner.jpg',
+    status: 'in-development',
+    payloadCapacity: 'heavy-lift',
+    reusabilityLevel: 'partially-reusable',
+    website: 'https://pldspace.com/en/miura-next-heavy',
+  },
+  {
+    id: 'miura-next-super-heavy',
+    name: 'Miura Next Super Heavy',
+    provider: 'pld-space',
+    image: 'https://pldspace.com/images/vehiculos/superheavy/banner.jpg',
+    status: 'in-development',
+    payloadCapacity: 'super-heavy-lift',
+    reusabilityLevel: 'partially-reusable',
+    website: 'https://pldspace.com/en/miura-next-superheavy',
   },
   {
     id: 'rfa-one',
@@ -60,6 +110,26 @@ export const vehicles: Vehicle[] = [
     payloadCapacity: 'small-lift',
     reusabilityLevel: 'partially-reusable',
     website: 'https://www.rfa.space/rfa-one/',
+  },
+  {
+    id: 'ariane-6',
+    name: 'Ariane 6',
+    provider: 'arianespace',
+    image: 'https://ariane.group/app/uploads/sites/4/2024/09/D‚collage-VA262-AG-cover.jpg.webp',
+    status: 'operational',
+    payloadCapacity: 'heavy-lift', // 21,500 kg to LEO in A64 configuration
+    reusabilityLevel: 'non-reusable',
+    website: 'https://www.arianespace.com/ariane-6/',
+  },
+  {
+    id: 'ariane-next',
+    name: 'Ariane Next',
+    provider: 'arianespace',
+    image: '',
+    status: 'in-development',
+    payloadCapacity: 'heavy-lift',
+    reusabilityLevel: 'partially-reusable',
+    website: 'https://en.wikipedia.org/wiki/Ariane_Next',
   },
   {
     id: 'long-march-5',

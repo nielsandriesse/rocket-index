@@ -79,7 +79,10 @@ const DesktopFilterView: FunctionComponent<DesktopFilterViewProps> = ({ label, i
   useOutsideClick(ref, () => { setIsMenuExpanded(false) });
   return (
     <div ref={ref} className='relative h-full flex flex-row items-center'>
-      <FilterButton label={label} isMenuExpanded={isMenuExpanded} onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
+      <FilterButton label={label} isMenuExpanded={isMenuExpanded} onClick={() => {
+        console.log('click');
+        setIsMenuExpanded(!isMenuExpanded);
+      }} />
       <DropdownMenu
         className={`w-[200px] absolute top-[47px] left-[-18px] ${ isMenuExpanded ? 'visible' : 'hidden' }`}
         items={ items.map((item) => ({ label: item.label, value: item.value })) }
