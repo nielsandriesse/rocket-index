@@ -51,7 +51,7 @@ const Header: FunctionComponent<Props> = ({
         <DesktopFilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
       </div>
       <Menu color='var(--foreground)' width='20px' height='20px' className='lg:hidden cursor-pointer' onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
-      <span className='text-xs font-bold select-none'>ROCKET INDEX</span>
+      {/* <span className='text-xs font-bold select-none'>ROCKET INDEX</span> */}
       <div className={`absolute lg:hidden top-full left-0 w-full h-[calc(100dvh-48px)] bg-background transition-transform duration-300 px-[18px] py-2 flex flex-col ${ isMenuExpanded ? 'translate-x-0' : '-translate-x-full' }`}>
         <MobileFilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
         <MobileFilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />

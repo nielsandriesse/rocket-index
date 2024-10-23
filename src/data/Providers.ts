@@ -3,7 +3,7 @@ export type Provider = {
   id: string;
   name: string;
   website: string;
-  regions: ('european-union' | 'united-states' | 'china')[];
+  regions: ('european-union' | 'united-states' | 'china' | 'japan' | 'new-zealand')[];
 }
 
 export const providers = [
@@ -18,6 +18,12 @@ export const providers = [
     name: 'Blue Origin',
     website: 'https://www.blueorigin.com/',
     regions: [ 'united-states' ],
+  },
+  {
+    id: 'rocket-lab',
+    name: 'Rocket Lab',
+    website: 'https://www.rocketlabusa.com/',
+    regions: [ 'new-zealand', 'united-states' ],
   },
   {
     id: 'pld-space',
@@ -43,4 +49,10 @@ export const providers = [
     website: 'https://en.wikipedia.org/wiki/China_National_Space_Administration',
     regions: [ 'china' ],
   },
+  {
+    id: 'space-one',
+    name: 'Space One',
+    website: 'https://www.space-one.co.jp/index_e.html',
+    regions: [ 'japan' ],
+  }
 ].sort((a, b) => a.name.localeCompare(b.name)) as Provider[];

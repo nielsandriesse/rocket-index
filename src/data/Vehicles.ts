@@ -2,7 +2,7 @@
 export type Vehicle = {
   id: string;
   name: string;
-  provider: 'spacex' | 'blue-origin' | 'pld-space' | 'rocket-factory-augsburg' | 'arianespace' | 'china-national-space-administration';
+  provider: 'spacex' | 'blue-origin' | 'rocket-lab' | 'pld-space' | 'rocket-factory-augsburg' | 'arianespace' | 'china-national-space-administration' | 'space-one';
   image: string;
   status: 'operational' | 'in-development';
   payloadCapacity: 'small-lift' | 'medium-lift' | 'heavy-lift' | 'super-heavy-lift';
@@ -50,6 +50,26 @@ export const vehicles: Vehicle[] = [
     payloadCapacity: 'heavy-lift',
     reusabilityLevel: 'partially-reusable',
     website: 'https://www.blueorigin.com/new-glenn',
+  },
+  {
+    id: 'electron',
+    name: 'Electron',
+    provider: 'rocket-lab',
+    image: 'https://i0.wp.com/spacenews.com/wp-content/uploads/2024/06/electron50.jpg?w=2000&ssl=1',
+    status: 'operational',
+    payloadCapacity: 'small-lift',
+    reusabilityLevel: 'partially-reusable',
+    website: 'https://www.rocketlabusa.com/launch/electron/',
+  },
+  {
+    id: 'neutron',
+    name: 'Neutron',
+    provider: 'rocket-lab',
+    image: 'https://i0.wp.com/spacenews.com/wp-content/uploads/2024/10/53194639182_f787a64a4e_o.jpg?w=1715&ssl=1',
+    status: 'in-development',
+    payloadCapacity: 'medium-lift',
+    reusabilityLevel: 'partially-reusable',
+    website: 'https://www.rocketlabusa.com/launch/neutron/',
   },
   { 
     id: 'miura-1',
@@ -132,6 +152,16 @@ export const vehicles: Vehicle[] = [
     website: 'https://en.wikipedia.org/wiki/Ariane_Next',
   },
   {
+    id: 'kairos',
+    name: 'Kairos',
+    provider: 'space-one',
+    image: 'https://www.reuters.com/resizer/v2/I7DECXJBXFNBJPBSJZWVBS6UW4.jpg?auth=93a88623dd9e8b7fcf94d247222cb14efc14c1eaa5059e0730c2d27ebe0f7bac&width=1200&quality=80',
+    status: 'in-development',
+    payloadCapacity: 'small-lift',
+    reusabilityLevel: 'non-reusable',
+    website: 'https://www.space-one.co.jp/vehicle/index_e.html',
+  },
+  {
     id: 'long-march-5',
     name: 'Long March 5',
     provider: 'china-national-space-administration',
@@ -140,5 +170,15 @@ export const vehicles: Vehicle[] = [
     payloadCapacity: 'heavy-lift',
     reusabilityLevel: 'non-reusable',
     website: 'https://en.wikipedia.org/wiki/Long_March_5',
-  }
+  },
+  {
+    id: 'long-march-6',
+    name: 'Long March 6',
+    provider: 'china-national-space-administration',
+    image: '',
+    status: 'operational',
+    payloadCapacity: 'medium-lift',
+    reusabilityLevel: 'non-reusable',
+    website: 'https://en.wikipedia.org/wiki/Long_March_6',
+  },
 ];
