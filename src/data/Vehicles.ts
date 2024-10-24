@@ -162,12 +162,42 @@ export const vehicles: Vehicle[] = [
     website: 'https://www.space-one.co.jp/vehicle/index_e.html',
   },
   {
+    id: 'long-march-2',
+    name: 'Long March 2',
+    provider: 'china-national-space-administration',
+    image: 'https://everydayastronaut.com/wp-content/uploads/2020/12/cz-3be-1536x854.jpg',
+    status: 'operational',
+    payloadCapacity: 'medium-lift', // 8,800 kg to LEO in 2F configuration
+    reusabilityLevel: 'non-reusable',
+    website: 'https://en.wikipedia.org/wiki/Long_March_2F',
+  },
+  {
+    id: 'long-march-3',
+    name: 'Long March 3',
+    provider: 'china-national-space-administration',
+    image: 'https://everydayastronaut.com/wp-content/uploads/2023/01/CZ-3BE-SY1002-001-1536x1034.jpg',
+    status: 'operational',
+    payloadCapacity: 'medium-lift', // 9,100 kg to LEO in 3C/E configuration
+    reusabilityLevel: 'non-reusable',
+    website: 'https://en.wikipedia.org/wiki/Long_March_3',
+  },
+  {
+    id: 'long-march-4',
+    name: 'Long March 4',
+    provider: 'china-national-space-administration',
+    image: 'https://everydayastronaut.com/wp-content/uploads/Prelaunch-Preview/CNSA/CZ-4C_2012-1536x922.jpg',
+    status: 'operational',
+    payloadCapacity: 'medium-lift', // 4,200 kg to LEO in 4C configuration
+    reusabilityLevel: 'non-reusable',
+    website: 'https://en.wikipedia.org/wiki/Long_March_4C',
+  },
+  {
     id: 'long-march-5',
     name: 'Long March 5',
     provider: 'china-national-space-administration',
     image: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Mengtian_launch.jpg',
     status: 'operational',
-    payloadCapacity: 'heavy-lift',
+    payloadCapacity: 'heavy-lift', // 25,000 kg to LEO
     reusabilityLevel: 'non-reusable',
     website: 'https://en.wikipedia.org/wiki/Long_March_5',
   },
@@ -175,10 +205,70 @@ export const vehicles: Vehicle[] = [
     id: 'long-march-6',
     name: 'Long March 6',
     provider: 'china-national-space-administration',
-    image: '',
+    image: 'https://www.cgwic.com/images/20210427/20210427-1.jpg',
     status: 'operational',
-    payloadCapacity: 'medium-lift',
+    payloadCapacity: 'medium-lift', // 4,500 kg to LEO in 6C configuration
     reusabilityLevel: 'non-reusable',
     website: 'https://en.wikipedia.org/wiki/Long_March_6',
+  },
+  {
+    id: 'long-march-7',
+    name: 'Long March 7',
+    provider: 'china-national-space-administration',
+    image: 'https://everydayastronaut.com/wp-content/uploads/2021/05/Long-March-7.jpg',
+    status: 'operational',
+    payloadCapacity: 'medium-lift', // 14,000 kg to LEO
+    reusabilityLevel: 'non-reusable',
+    website: 'https://en.wikipedia.org/wiki/Long_March_7',
+  },
+  {
+    id: 'long-march-8',
+    name: 'Long March 8',
+    provider: 'china-national-space-administration',
+    image: 'https://i0.wp.com/spacenews.com/wp-content/uploads/2022/02/long-march-8-y2-wenchang-27feb2022-ourspace.jpg?w=2156&ssl=1',
+    status: 'operational',
+    payloadCapacity: 'medium-lift', // 8,100 kg to LEO
+    reusabilityLevel: 'non-reusable', // Plans for partial reusability in the future
+    website: 'https://en.wikipedia.org/wiki/Long_March_8',
+  },
+  {
+    id: 'long-march-9',
+    name: 'Long March 9',
+    provider: 'china-national-space-administration',
+    image: '',
+    status: 'in-development',
+    payloadCapacity: 'super-heavy-lift', // 150,000 kg to LEO
+    reusabilityLevel: 'partially-reusable', // Plans for full reusability in the future
+    website: 'https://en.wikipedia.org/wiki/Long_March_9',
+  },
+  {
+    id: 'long-march-10',
+    name: 'Long March 10',
+    provider: 'china-national-space-administration',
+    image: '',
+    status: 'in-development',
+    payloadCapacity: 'heavy-lift', // 70,000 kg to LEO
+    reusabilityLevel: 'partially-reusable',
+    website: 'https://en.wikipedia.org/wiki/Long_March_10',
+  },
+  {
+    id: 'long-march-11',
+    name: 'Long March 11',
+    provider: 'china-national-space-administration',
+    image: 'https://everydayastronaut.com/wp-content/uploads/2022/04/long-march-11-cover-.jpeg',
+    status: 'operational',
+    payloadCapacity: 'small-lift', // 700 kg to LEO
+    reusabilityLevel: 'non-reusable',
+    website: 'https://en.wikipedia.org/wiki/Long_March_11',
+  },
+  {
+    id: 'long-march-12',
+    name: 'Long March 12',
+    provider: 'china-national-space-administration',
+    image: '',
+    status: 'in-development',
+    payloadCapacity: 'medium-lift', // 10,000 kg to LEO
+    reusabilityLevel: 'non-reusable',
+    website: 'https://en.wikipedia.org/wiki/Long_March_12',
   },
 ];
