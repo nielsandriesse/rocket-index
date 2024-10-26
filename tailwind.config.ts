@@ -11,6 +11,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         white10: "var(--white10)",
         white20: "var(--white20)",
+        white50: "var(--white50)",
         darkGray: "var(--darkGray)",
         lightGreen: "var(--lightGreen)",
         lightRed: "var(--lightRed)",

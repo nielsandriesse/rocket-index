@@ -50,6 +50,12 @@ export const providers = [
     regions: [ 'china' ],
   },
   {
+    id: 'galactic-energy',
+    name: 'Galactic Energy',
+    website: 'https://www.galactic-energy.cn//index.php/En',
+    regions: [ 'china' ],
+  },
+  {
     id: 'space-one',
     name: 'Space One',
     website: 'https://www.space-one.co.jp/index_e.html',

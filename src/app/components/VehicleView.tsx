@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react';
+import { MediaImage } from 'iconoir-react';
 
 import Badge from './Badge';
 
@@ -30,8 +31,20 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle }) => {
 
   return (
     <div className='relative w-full lg:w-1/2 h-[calc((100dvh-48px)/2)] cursor-pointer bg-[#202020]' onClick={() => window.open(vehicle.website, '_blank')}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      { vehicle.image && <img src={vehicle.image} alt={vehicle.name} className='absolute top-0 left-0 w-full h-full object-cover select-none' draggable="false" /> }
+      {/* Background Image */}
+      { vehicle.image ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img src={vehicle.image} alt={vehicle.name} className='absolute top-0 left-0 w-full h-full object-cover select-none' draggable="false" />
+      ) : (
+        <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
+          <MediaImage width='64px' height='64px' color='#808080' />
+        </div>
+      ) }
+      {/* Top Content */}
+      <div className='absolute top-0 left-0 w-full flex flex-row items-center px-4 py-2 lg:px-8 lg:py-4 text-white'>
+        <span className='select-none' style={{ fontSize: '10px' }}>PHOTO CREDIT: { vehicle.photoCredit.toUpperCase() }</span>
+      </div>
+      {/* Bottom Content */}
       <div className='absolute bottom-0 left-0 w-full h-1/4 flex flex-col justify-center p-4 lg:p-8 bg-[#00000080] text-white'>
         <div className='flex flex-row items-center justify-between gap-8'>
           <span className='h-[24px] text-base font-extrabold select-none'>{ vehicle.name.toUpperCase() }</span>
