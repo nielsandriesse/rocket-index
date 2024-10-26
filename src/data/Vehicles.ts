@@ -2,7 +2,7 @@
 export type Vehicle = {
   id: string;
   name: string;
-  provider: 'spacex' | 'blue-origin' | 'rocket-lab' | 'pld-space' | 'rocket-factory-augsburg' | 'arianespace' | 'china-national-space-administration' | 'galactic-energy' | 'space-one' | 'japan-aerospace-exploration-agency';
+  provider: string;
   image: string;
   photoCredit: string;
   status: 'operational' | 'in-development';

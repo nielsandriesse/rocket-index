@@ -3,7 +3,7 @@ export type Provider = {
   id: string;
   name: string;
   website: string;
-  regions: ('european-union' | 'united-states' | 'china' | 'japan' | 'new-zealand')[];
+  regions: ('european-union' | 'united-states' | 'china' | 'japan' | 'new-zealand' | 'spain' | 'germany' | 'france')[];
 }
 
 export const providers = [
@@ -29,19 +29,19 @@ export const providers = [
     id: 'pld-space',
     name: 'PLD Space',
     website: 'https://www.pldspace.com/',
-    regions: [ 'european-union' ],
+    regions: [ 'european-union', 'spain' ],
   },
   {
     id: 'rocket-factory-augsburg',
     name: 'Rocket Factory Augsburg',
     website: 'https://www.rfa.space/',
-    regions: [ 'european-union' ],
+    regions: [ 'european-union', 'germany' ],
   },
   {
     id: 'arianespace',
     name: 'Arianespace',
     website: 'https://www.arianespace.com/',
-    regions: [ 'european-union' ],
+    regions: [ 'european-union', 'france' ],
   },
   {
     id: 'china-national-space-administration',
