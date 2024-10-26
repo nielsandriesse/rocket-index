@@ -60,5 +60,11 @@ export const providers = [
     name: 'Space One',
     website: 'https://www.space-one.co.jp/index_e.html',
     regions: [ 'japan' ],
+  },
+  {
+    id: 'japan-aerospace-exploration-agency',
+    name: 'Japan Aerospace Exploration Agency',
+    website: 'https://global.jaxa.jp/',
+    regions: [ 'japan' ],
   }
 ].sort((a, b) => a.name.localeCompare(b.name)) as Provider[];

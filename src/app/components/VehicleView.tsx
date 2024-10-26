@@ -42,7 +42,7 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle }) => {
       ) }
       {/* Top Content */}
       <div className='absolute top-0 left-0 w-full flex flex-row items-center px-4 py-2 lg:px-8 lg:py-4 text-white'>
-        <span className='select-none' style={{ fontSize: '10px' }}>PHOTO CREDIT: { vehicle.photoCredit.toUpperCase() }</span>
+        { vehicle.photoCredit && <span className='select-none' style={{ fontSize: '10px' }}>PHOTO CREDIT: { vehicle.photoCredit.toUpperCase() }</span> }
       </div>
       {/* Bottom Content */}
       <div className='absolute bottom-0 left-0 w-full h-1/4 flex flex-col justify-center p-4 lg:p-8 bg-[#00000080] text-white'>

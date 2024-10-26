@@ -2,7 +2,7 @@
 export type Vehicle = {
   id: string;
   name: string;
-  provider: 'spacex' | 'blue-origin' | 'rocket-lab' | 'pld-space' | 'rocket-factory-augsburg' | 'arianespace' | 'china-national-space-administration' | 'galactic-energy' | 'space-one';
+  provider: 'spacex' | 'blue-origin' | 'rocket-lab' | 'pld-space' | 'rocket-factory-augsburg' | 'arianespace' | 'china-national-space-administration' | 'galactic-energy' | 'space-one' | 'japan-aerospace-exploration-agency';
   image: string;
   photoCredit: string;
   status: 'operational' | 'in-development';
@@ -61,7 +61,7 @@ export const vehicles: Vehicle[] = [
     name: 'Electron',
     provider: 'rocket-lab',
     image: 'https://i0.wp.com/spacenews.com/wp-content/uploads/2024/06/electron50.jpg?w=2000&ssl=1',
-    photoCredit: 'Unknown',
+    photoCredit: 'Rocket Lab',
     status: 'operational',
     payloadCapacity: 'small-lift',
     reusabilityLevel: 'partially-reusable',
@@ -72,7 +72,7 @@ export const vehicles: Vehicle[] = [
     name: 'Neutron',
     provider: 'rocket-lab',
     image: 'https://i0.wp.com/spacenews.com/wp-content/uploads/2024/10/53194639182_f787a64a4e_o.jpg?w=1715&ssl=1',
-    photoCredit: 'Unknown',
+    photoCredit: 'Rocket Lab',
     status: 'in-development',
     payloadCapacity: 'medium-lift',
     reusabilityLevel: 'partially-reusable',
@@ -160,7 +160,7 @@ export const vehicles: Vehicle[] = [
     name: 'Ariane Next',
     provider: 'arianespace',
     image: '',
-    photoCredit: 'arianespace',
+    photoCredit: '',
     status: 'in-development',
     payloadCapacity: 'heavy-lift',
     reusabilityLevel: 'partially-reusable',
@@ -171,18 +171,29 @@ export const vehicles: Vehicle[] = [
     name: 'Kairos',
     provider: 'space-one',
     image: 'https://www.reuters.com/resizer/v2/I7DECXJBXFNBJPBSJZWVBS6UW4.jpg?auth=93a88623dd9e8b7fcf94d247222cb14efc14c1eaa5059e0730c2d27ebe0f7bac&width=1200&quality=80',
-    photoCredit: 'Unknown',
+    photoCredit: 'Kyodo',
     status: 'in-development',
     payloadCapacity: 'small-lift',
     reusabilityLevel: 'non-reusable',
     website: 'https://www.space-one.co.jp/vehicle/index_e.html',
   },
   {
+    id: 'h3',
+    name: 'H3',
+    provider: 'japan-aerospace-exploration-agency',
+    image: 'https://i0.wp.com/spacenews.com/wp-content/uploads/2024/02/h3-f2-liftoff2.jpg?w=2000&ssl=1',
+    photoCredit: 'JAXA',
+    status: 'operational',
+    payloadCapacity: 'medium-lift',
+    reusabilityLevel: 'non-reusable',
+    website: 'https://global.jaxa.jp/projects/rockets/h3/',
+  },
+  {
     id: 'long-march-2',
     name: 'Long March 2',
     provider: 'china-national-space-administration',
     image: 'https://everydayastronaut.com/wp-content/uploads/2020/12/cz-3be-1536x854.jpg',
-    photoCredit: 'Unknown',
+    photoCredit: 'Xinhua',
     status: 'operational',
     payloadCapacity: 'medium-lift', // 8,800 kg to LEO in 2F configuration
     reusabilityLevel: 'non-reusable',
@@ -193,7 +204,7 @@ export const vehicles: Vehicle[] = [
     name: 'Long March 3',
     provider: 'china-national-space-administration',
     image: 'https://everydayastronaut.com/wp-content/uploads/2023/01/CZ-3BE-SY1002-001-1536x1034.jpg',
-    photoCredit: 'Unknown',
+    photoCredit: 'Qin Yingjian',
     status: 'operational',
     payloadCapacity: 'medium-lift', // 9,100 kg to LEO in 3C/E configuration
     reusabilityLevel: 'non-reusable',
@@ -204,7 +215,7 @@ export const vehicles: Vehicle[] = [
     name: 'Long March 4',
     provider: 'china-national-space-administration',
     image: 'https://everydayastronaut.com/wp-content/uploads/Prelaunch-Preview/CNSA/CZ-4C_2012-1536x922.jpg',
-    photoCredit: 'Unknown',
+    photoCredit: 'Xinhua',
     status: 'operational',
     payloadCapacity: 'medium-lift', // 4,200 kg to LEO in 4C configuration
     reusabilityLevel: 'non-reusable',
@@ -226,7 +237,7 @@ export const vehicles: Vehicle[] = [
     name: 'Long March 6',
     provider: 'china-national-space-administration',
     image: 'https://www.cgwic.com/images/20210427/20210427-1.jpg',
-    photoCredit: 'Unknown',
+    photoCredit: 'CASC',
     status: 'operational',
     payloadCapacity: 'medium-lift', // 4,500 kg to LEO in 6C configuration
     reusabilityLevel: 'non-reusable',
@@ -237,7 +248,7 @@ export const vehicles: Vehicle[] = [
     name: 'Long March 7',
     provider: 'china-national-space-administration',
     image: 'https://everydayastronaut.com/wp-content/uploads/2021/05/Long-March-7.jpg',
-    photoCredit: 'Unknown',
+    photoCredit: 'Xinhua',
     status: 'operational',
     payloadCapacity: 'medium-lift', // 14,000 kg to LEO
     reusabilityLevel: 'non-reusable',
@@ -248,7 +259,7 @@ export const vehicles: Vehicle[] = [
     name: 'Long March 8',
     provider: 'china-national-space-administration',
     image: 'https://i0.wp.com/spacenews.com/wp-content/uploads/2022/02/long-march-8-y2-wenchang-27feb2022-ourspace.jpg?w=2156&ssl=1',
-    photoCredit: 'Unknown',
+    photoCredit: 'Ourspace/CNSA',
     status: 'operational',
     payloadCapacity: 'medium-lift', // 8,100 kg to LEO
     reusabilityLevel: 'non-reusable', // Plans for partial reusability in the future
@@ -259,7 +270,7 @@ export const vehicles: Vehicle[] = [
     name: 'Long March 9',
     provider: 'china-national-space-administration',
     image: '',
-    photoCredit: 'Unknown',
+    photoCredit: '',
     status: 'in-development',
     payloadCapacity: 'super-heavy-lift', // 150,000 kg to LEO
     reusabilityLevel: 'partially-reusable', // Plans for full reusability in the future
@@ -270,7 +281,7 @@ export const vehicles: Vehicle[] = [
     name: 'Long March 10',
     provider: 'china-national-space-administration',
     image: '',
-    photoCredit: 'Unknown',
+    photoCredit: '',
     status: 'in-development',
     payloadCapacity: 'heavy-lift', // 70,000 kg to LEO
     reusabilityLevel: 'partially-reusable',
@@ -281,7 +292,7 @@ export const vehicles: Vehicle[] = [
     name: 'Long March 11',
     provider: 'china-national-space-administration',
     image: 'https://everydayastronaut.com/wp-content/uploads/2022/04/long-march-11-cover-.jpeg',
-    photoCredit: 'Unknown',
+    photoCredit: 'Xinhua',
     status: 'operational',
     payloadCapacity: 'small-lift', // 700 kg to LEO
     reusabilityLevel: 'non-reusable',
@@ -292,7 +303,7 @@ export const vehicles: Vehicle[] = [
     name: 'Long March 12',
     provider: 'china-national-space-administration',
     image: '',
-    photoCredit: 'Unknown',
+    photoCredit: '',
     status: 'in-development',
     payloadCapacity: 'medium-lift', // 10,000 kg to LEO
     reusabilityLevel: 'non-reusable',
@@ -303,7 +314,7 @@ export const vehicles: Vehicle[] = [
     name: 'Ceres 1',
     provider: 'galactic-energy',
     image: 'https://i0.wp.com/spacenews.com/wp-content/uploads/2020/11/Ceres1-launch-ourspace-1-large-2.jpg?w=2234&ssl=1',
-    photoCredit: 'Unknown',
+    photoCredit: 'nasaspaceflight.com',
     status: 'operational',
     payloadCapacity: 'small-lift',
     reusabilityLevel: 'non-reusable',
@@ -314,7 +325,7 @@ export const vehicles: Vehicle[] = [
     name: 'Pallas 1',
     provider: 'galactic-energy',
     image: '',
-    photoCredit: 'Unknown',
+    photoCredit: '',
     status: 'in-development',
     payloadCapacity: 'medium-lift',
     reusabilityLevel: 'partially-reusable',
