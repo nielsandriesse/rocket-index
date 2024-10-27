@@ -39,7 +39,7 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle }) => {
   const photoCredit = vehicle.image ? vehicle.photoCredit : 'Gregoire Jeanneau';
 
   return (
-    <div className='relative w-full lg:w-1/2 h-[calc((100dvh-48px)/2)] cursor-pointer bg-[#202020]' onClick={() => window.open(vehicle.website, '_blank')}>
+    <div className='relative w-full xl:w-1/2 h-[calc((100dvh-48px)/2)] cursor-pointer bg-[#202020]' onClick={() => window.open(vehicle.website, '_blank')}>
       {/* Background Image */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={imageURL} alt={imageAlt} className='absolute top-0 left-0 w-full h-full object-cover select-none' draggable="false" />
@@ -56,7 +56,7 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle }) => {
       <div className='absolute bottom-0 left-0 w-full h-1/4 flex flex-col justify-center px-4 lg:px-8 bg-gradient-to-b from-[#00000000] to-[#000000CC] text-white'>
         <span className='text-xl font-extrabold select-none'>{ vehicle.name.toUpperCase() }</span>
         <span className='text-xs select-none truncate'>{ provider.name.toUpperCase() }</span>
-        <div className='flex flex-row items-end justify-between gap-4 lg:gap-8 mt-2'>
+        <div className='flex flex-row items-center justify-between gap-4 lg:gap-8 mt-2'>
           <div className='flex flex-row items-center flex-wrap' style={{ gap: '4px 16px' }}>
             <Badge label={status.label.toUpperCase()} color={statusColor} />
             <div className={`text-xs flex flex-row items-center gap-2 shrink-0`}>
