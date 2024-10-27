@@ -14,9 +14,8 @@ type Props = {
 }
 
 const DropdownMenu: FunctionComponent<Props> = ({ className, items, selectedItems, onItemsSelected }) => {
-
   return (
-    <div className={`z-10 flex flex-col ${className} bg-black60 py-2 backdrop-blur-md`}>
+    <div className={`z-10 flex flex-col bg-black60 py-2 backdrop-blur-md ${className}`}>
       { items.map((item) => {
         const isSelected = selectedItems.includes(item.value);
         return (
@@ -29,9 +28,7 @@ const DropdownMenu: FunctionComponent<Props> = ({ className, items, selectedItem
             }}
           >
             <span className='text-xs'>{ item.label.toUpperCase() }</span>
-            { isSelected ? (
-              <Check color='var(--foreground)' width='16px' height='16px' className='shrink-0' />
-            ) : null }
+            { isSelected ? <Check color='var(--foreground)' width='16px' height='16px' className='shrink-0' /> : null }
           </div>
         )
       }) }

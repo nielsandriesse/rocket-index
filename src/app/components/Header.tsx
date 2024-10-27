@@ -11,6 +11,7 @@ import { allRegions } from '@/data/Regions';
 import { allReusabilityLevels } from '@/data/ReusabilityLevels';
 import { allStatuses } from '@/data/Statuses';
 import { providers } from '@/data/Providers';
+import { useMediaQuery } from 'react-responsive';
 
 type Props = {
   isMenuExpanded: boolean;
@@ -41,26 +42,33 @@ const Header: FunctionComponent<Props> = ({
   selectedRegions,
   setSelectedRegions,
 }) => {
-  return (
-    <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 px-4 lg:px-8 gap-4 lg:gap-8'>
-      <div className='hidden lg:flex flex-row items-center gap-8 h-full'>
-        <DesktopFilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
-        <DesktopFilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
-        <DesktopFilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
-        <DesktopFilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
-        <DesktopFilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
+  const isLgScreen = useMediaQuery({ query: '(min-width: 1024px)' });
+  if (isLgScreen) {
+    return (
+      <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 px-8 gap-8'>
+        <div className='flex flex-row items-center gap-8 h-full'>
+          <DesktopFilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
+          <DesktopFilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
+          <DesktopFilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
+          <DesktopFilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
+          <DesktopFilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
+        </div>
       </div>
-      <Menu color='var(--foreground)' width='20px' height='20px' className='lg:hidden cursor-pointer' onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
-      {/* <span className='text-xs font-bold select-none'>ROCKET INDEX</span> */}
-      <div className={`absolute lg:hidden top-full left-0 w-full h-[calc(100dvh-48px)] bg-background transition-transform duration-300 px-[18px] py-2 flex flex-col ${ isMenuExpanded ? 'translate-x-0' : '-translate-x-full' }`}>
-        <MobileFilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
-        <MobileFilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
-        <MobileFilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
-        <MobileFilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
-        <MobileFilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
+    );
+  } else {
+    return (
+      <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 px-4 gap-4'>
+        <Menu color='var(--foreground)' width='20px' height='20px' className='cursor-pointer' onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
+        <div className={`absolute top-full left-0 w-full h-[calc(100dvh-48px)] bg-background transition-transform duration-300 px-[18px] py-2 flex flex-col ${ isMenuExpanded ? 'translate-x-0' : '-translate-x-full' }`}>
+          <MobileFilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
+          <MobileFilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
+          <MobileFilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />
+          <MobileFilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
+          <MobileFilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 // Desktop Filter View

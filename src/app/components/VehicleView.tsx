@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import { MediaImage } from 'iconoir-react';
 
 import Badge from './Badge';
 
@@ -35,21 +34,23 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle }) => {
     case 'fully-reusable': reusabilityLevelColor = 'var(--lightGreen)'; break;
     default: reusabilityLevelColor = '#FFFFFF'; break; // Should never occur
   }
+  const imageURL = vehicle.image ? vehicle.image : '/images/placeholder.webp';
+  const imageAlt = vehicle.image ? vehicle.name : 'No Image';
+  const photoCredit = vehicle.image ? vehicle.photoCredit : 'Gregoire Jeanneau';
 
   return (
     <div className='relative w-full lg:w-1/2 h-[calc((100dvh-48px)/2)] cursor-pointer bg-[#202020]' onClick={() => window.open(vehicle.website, '_blank')}>
       {/* Background Image */}
-      { vehicle.image ? (
-        // eslint-disable-next-line @next/next/no-img-element
-        <img src={vehicle.image} alt={vehicle.name} className='absolute top-0 left-0 w-full h-full object-cover select-none' draggable="false" />
-      ) : (
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={imageURL} alt={imageAlt} className='absolute top-0 left-0 w-full h-full object-cover select-none' draggable="false" />
+      { vehicle.image ? null : (
         <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
-          <MediaImage width='64px' height='64px' color='#808080' />
+          <span className='text-xs font-bold'>NO IMAGE</span>
         </div>
       ) }
       {/* Top Content */}
       <div className='absolute top-0 left-0 w-full flex flex-row items-center p-4 lg:px-8 lg:py-6 text-white'>
-        { vehicle.photoCredit && <span className='select-none' style={{ fontSize: '10px' }}>PHOTO CREDIT: { vehicle.photoCredit.toUpperCase() }</span> }
+        <span className='select-none' style={{ fontSize: '10px' }}>PHOTO CREDIT: { photoCredit.toUpperCase() }</span>
       </div>
       {/* Bottom Content */}
       <div className='absolute bottom-0 left-0 w-full h-1/4 flex flex-col justify-center px-4 lg:px-8 bg-gradient-to-b from-[#00000000] to-[#000000CC] text-white'>
