@@ -12,6 +12,7 @@ const config: Config = {
         white10: "var(--white10)",
         white20: "var(--white20)",
         white50: "var(--white50)",
+        black60: "var(--black60)",
         darkGray: "var(--darkGray)",
         lightGreen: "var(--lightGreen)",
         lightRed: "var(--lightRed)",

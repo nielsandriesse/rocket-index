@@ -1,7 +1,7 @@
 import useOutsideClick from '@rooks/use-outside-click'
 
 import { FunctionComponent, useRef, useState } from 'react';
-import { CheckSquare, Menu, Square } from 'iconoir-react';
+import { Check, Menu } from 'iconoir-react';
 
 import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
 import FilterButton from './FilterButton';
@@ -79,12 +79,9 @@ const DesktopFilterView: FunctionComponent<DesktopFilterViewProps> = ({ label, i
   useOutsideClick(ref, () => { setIsMenuExpanded(false) });
   return (
     <div ref={ref} className='relative h-full flex flex-row items-center'>
-      <FilterButton label={label} isMenuExpanded={isMenuExpanded} onClick={() => {
-        console.log('click');
-        setIsMenuExpanded(!isMenuExpanded);
-      }} />
+      <FilterButton label={label} onClick={() => { setIsMenuExpanded(!isMenuExpanded) }} />
       <DropdownMenu
-        className={`w-[200px] absolute top-[47px] left-[-18px] ${ isMenuExpanded ? 'visible' : 'hidden' }`}
+        className={`w-[200px] absolute top-[48px] left-[-18px] ${ isMenuExpanded ? 'visible' : 'hidden' }`}
         items={ items.map((item) => ({ label: item.label, value: item.value })) }
         selectedItems={selectedItems}
         onItemsSelected={setSelectedItems}
@@ -106,7 +103,7 @@ const MobileFilterView: FunctionComponent<MobileFilterViewProps> = ({ label, ite
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
   return (
     <div className={`flex flex-col ${ isMenuExpanded ? '' : 'mb-4' }`}>
-      <FilterButton label={label} isMenuExpanded={isMenuExpanded} onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
+      <FilterButton label={label} onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
       { isMenuExpanded ? (
         <div className='flex flex-col py-2'>
           { items.map((item) => {
@@ -114,18 +111,16 @@ const MobileFilterView: FunctionComponent<MobileFilterViewProps> = ({ label, ite
             return (
               <div
                 key={item.value}
-                className='px-4 py-2 cursor-pointer select-none flex flex-row gap-2'
+                className='px-4 py-2 cursor-pointer select-none flex flex-row justify-between gap-2'
                 onClick={() => {
                   const newSelectedItems = isSelected ? selectedItems.filter((selectedItem) => selectedItem !== item.value) : [ ...selectedItems, item.value ];
                   setSelectedItems(newSelectedItems);
                 }}
               >
-                { isSelected ? (
-                  <CheckSquare color='var(--foreground)' width='16px' height='16px' className='shrink-0' />
-                ) : (
-                  <Square color='var(--foreground)' width='16px' height='16px' className='shrink-0' />
-                ) }
                 <span className='text-xs'>{ item.label.toUpperCase() }</span>
+                { isSelected ? (
+                  <Check color='var(--foreground)' width='16px' height='16px' className='shrink-0' />
+                ) : null }
               </div>
             )
           }) }

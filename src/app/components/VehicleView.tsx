@@ -20,6 +20,13 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle }) => {
   const status = allStatuses.find((status) => status.value === vehicle.status)!;
   const statusColor = (status.value == 'operational') ? 'var(--lightGreen)' : 'var(--lightBlue)';
   const payloadCapacity = allPayloadCapacities.find((payloadCapacity) => payloadCapacity.value === vehicle.payloadCapacity)!;
+  let payloadCapacityIconPath: string;
+  switch (payloadCapacity.value) {
+    case 'small-lift': payloadCapacityIconPath = '/icons/small-lift.svg'; break;
+    case 'medium-lift': payloadCapacityIconPath = '/icons/medium-lift.svg'; break;
+    case 'heavy-lift': payloadCapacityIconPath = '/icons/heavy-lift.svg'; break;
+    default: payloadCapacityIconPath = '/icons/super-heavy-lift.svg'; break;
+  }
   const reusabilityLevel = allReusabilityLevels.find((reusabilityLevel) => reusabilityLevel.value === vehicle.reusabilityLevel)!;
   let reusabilityLevelColor: string;
   switch (reusabilityLevel.value) {
@@ -41,28 +48,32 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle }) => {
         </div>
       ) }
       {/* Top Content */}
-      <div className='absolute top-0 left-0 w-full flex flex-row items-center px-4 py-2 lg:px-8 lg:py-4 text-white'>
+      <div className='absolute top-0 left-0 w-full flex flex-row items-center p-4 lg:px-8 lg:py-6 text-white'>
         { vehicle.photoCredit && <span className='select-none' style={{ fontSize: '10px' }}>PHOTO CREDIT: { vehicle.photoCredit.toUpperCase() }</span> }
       </div>
       {/* Bottom Content */}
-      <div className='absolute bottom-0 left-0 w-full h-1/4 flex flex-col justify-center p-4 lg:p-8 bg-[#00000080] text-white'>
-        <div className='flex flex-row items-center justify-between gap-8'>
-          <span className='h-[24px] text-base font-extrabold select-none'>{ vehicle.name.toUpperCase() }</span>
-          <Badge label={status.label.toUpperCase()} color={statusColor} />
-        </div>
-        <div className='flex flex-row items-center justify-between gap-8'>
-          <span className='h-[24px] text-xs select-none truncate'>{ provider.name.toUpperCase() }</span>
-          <Badge label={payloadCapacity.label.toUpperCase()} color='#09bc62' />
-        </div>
-        <div className='flex flex-row items-center justify-between gap-8'>
-          <div className='h-[24px] flex flex-row items-center gap-2'>
+      <div className='absolute bottom-0 left-0 w-full h-1/4 flex flex-col justify-center px-4 lg:px-8 bg-gradient-to-b from-[#00000000] to-[#000000CC] text-white'>
+        <span className='text-xl font-extrabold select-none'>{ vehicle.name.toUpperCase() }</span>
+        <span className='text-xs select-none truncate'>{ provider.name.toUpperCase() }</span>
+        <div className='flex flex-row items-end justify-between gap-4 lg:gap-8 mt-2'>
+          <div className='flex flex-row items-center flex-wrap' style={{ gap: '4px 16px' }}>
+            <Badge label={status.label.toUpperCase()} color={statusColor} />
+            <div className={`text-xs flex flex-row items-center gap-2 shrink-0`}>
+              <div className='w-[24px] h-[24px]'>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={payloadCapacityIconPath} alt={payloadCapacity.label} width='24px' height='24px' className='select-none shrink-0 translate-y-[-5px]' />
+              </div>
+              <span className='select-none'>{ payloadCapacity.label.toUpperCase() }</span>
+            </div>
+            <Badge label={reusabilityLevel.label.toUpperCase()} color={reusabilityLevelColor} />
+          </div>
+          <div className='flex flex-row items-center gap-2 shrink-0'>
             { provider.regions.map((region) => {
               const data = _regionImageData[region]!;
               // eslint-disable-next-line @next/next/no-img-element
               return <img key={region} src={data.url} alt={region} width='36px' height={`${36 * data.aspectRatio}px`} className='select-none shrink-0 mt-[2px]' />
             }) }
           </div>
-          <Badge label={reusabilityLevel.label.toUpperCase()} color={reusabilityLevelColor} />
         </div>
       </div>
     </div>

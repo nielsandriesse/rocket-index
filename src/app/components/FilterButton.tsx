@@ -1,20 +1,17 @@
 import { FunctionComponent } from 'react';
-import { NavArrowDown } from 'iconoir-react';
 
 type Props = {
   label: string;
-  isMenuExpanded: boolean;
   onClick: () => void;
 }
 
-const FilterButton: FunctionComponent<Props> = ({ label, isMenuExpanded, onClick }) => {
+const FilterButton: FunctionComponent<Props> = ({ label, onClick }) => {
   return (
     <div
       className='flex flex-row items-center gap-2 cursor-pointer select-none shrink-0'
       onClick={onClick}
     >
-      <span className='text-xs'>{ label.toUpperCase() }</span>
-      <NavArrowDown width='20px' height='20px' className={`transition-transform duration-300 ${ isMenuExpanded ? 'rotate-180' : '' }`} />
+      <span className='text-xs font-bold'>{ label.toUpperCase() }</span>
     </div>
   );
 }
