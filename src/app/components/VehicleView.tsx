@@ -73,7 +73,7 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle, hasPriority }) => {
         <span className='select-none' style={{ fontSize: '10px' }}>PHOTO CREDIT: { photoCredit.toUpperCase() }</span>
       </div>
       {/* Bottom Content */}
-      <div className='absolute bottom-0 left-0 w-full h-1/3 lg:h-1/4 flex flex-col justify-center px-4 lg:px-8 bg-gradient-to-b from-[#00000000] to-[#000000CC] text-white'>
+      <div className='absolute bottom-0 left-0 w-full h-1/3 lg:h-1/4 flex flex-col justify-end px-4 pb-4 lg:px-8 lg:pb-8 bg-gradient-to-b from-[#00000000] to-[#000000CC] text-white'>
         <span className='text-xl font-extrabold select-none'>{ vehicle.name.toUpperCase() }</span>
         <span className='text-xs select-none truncate'>{ provider.name.toUpperCase() }</span>
         <div className='flex flex-row items-center justify-between gap-4 lg:gap-8 mt-2'>
