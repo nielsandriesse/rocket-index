@@ -72,5 +72,11 @@ export const providers = [
     name: 'Roscosmos',
     website: 'https://en.wikipedia.org/wiki/Roscosmos',
     regions: [ 'russia' ],
-  }
+  },
+  {
+    id: 'avio',
+    name: 'Avio',
+    website: 'https://www.avio.com/',
+    regions: [ 'italy' ],
+  },
 ].sort((a, b) => a.name!.localeCompare(b.name!)) as Provider[];

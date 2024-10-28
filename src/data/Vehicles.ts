@@ -167,6 +167,17 @@ export const vehicles: Vehicle[] = [
     website: 'https://en.wikipedia.org/wiki/Ariane_Next',
   },
   {
+    id: 'vega-c',
+    name: 'Vega C',
+    provider: 'avio',
+    image: '/images/vega-c.webp',
+    photoCredit: 'ESA',
+    status: 'operational',
+    payloadCapacity: 'medium-lift',
+    reusabilityLevel: 'non-reusable',
+    website: 'https://www.avio.com/vega-c',
+  },
+  {
     id: 'kairos',
     name: 'Kairos',
     provider: 'space-one',

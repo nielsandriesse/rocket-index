@@ -10,6 +10,7 @@ export const allRegions = [
   { label: 'France', value: 'france' },
   { label: 'Germany', value: 'germany' },
   { label: 'Russia', value: 'russia' },
+  { label: 'Italy', value: 'italy' },
 ].sort((a, b) => a.label.localeCompare(b.label)) as DropdownMenuItem[];
 
 export type RegionImageData = {
@@ -27,4 +28,5 @@ export const regionImageData: Record<string, RegionImageData> = {
   'france': { url: 'https://upload.wikimedia.org/wikipedia/en/c/c3/Flag_of_France.svg', aspectRatio: 2/3 },
   'germany': { url: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Flag_of_Germany.svg', aspectRatio: 480/800 },
   'russia': { url: 'https://upload.wikimedia.org/wikipedia/en/f/f3/Flag_of_Russia.svg', aspectRatio: 2/3 },
+  'italy': { url: 'https://upload.wikimedia.org/wikipedia/commons/0/03/Flag_of_Italy.svg', aspectRatio: 2/3 },
 }
