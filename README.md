@@ -1,3 +1,7 @@
+## Photo credits
+
+Do you see a photo that isn't credited correctly? Please let me know or make a pull request to fix it.
+
 ## Adding a vehicle or launch provider
 
 To add a vehicle or launch provider, update the files in `src/data` and make a pull request. I'll usually be able to merge it within a few days. A couple things to keep in mind:
