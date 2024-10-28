@@ -1,3 +1,5 @@
+'use client';
+
 import { Check } from 'iconoir-react';
 import { FunctionComponent } from 'react';
 

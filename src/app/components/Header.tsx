@@ -1,6 +1,9 @@
+'use client';
+
+import Image from 'next/image';
 import useOutsideClick from '@rooks/use-outside-click'
 
-import { FunctionComponent, useRef, useState } from 'react';
+import { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { Check, Menu } from 'iconoir-react';
 
 import DropdownMenu, { DropdownMenuItem } from './DropdownMenu';
@@ -11,7 +14,6 @@ import { allRegions } from '@/data/Regions';
 import { allReusabilityLevels } from '@/data/ReusabilityLevels';
 import { allStatuses } from '@/data/Statuses';
 import { providers } from '@/data/Providers';
-import { useMediaQuery } from 'react-responsive';
 
 type Props = {
   isMenuExpanded: boolean;
@@ -42,10 +44,19 @@ const Header: FunctionComponent<Props> = ({
   selectedRegions,
   setSelectedRegions,
 }) => {
-  const isLgScreen = useMediaQuery({ query: '(min-width: 1024px)' });
+
+  const [isLgScreen, setIsLgScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => { setIsLgScreen(window.innerWidth >= 1024) };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   if (isLgScreen) {
     return (
-      <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 px-8 gap-8 shrink-0'>
+      <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 pl-8 pr-5 gap-8 shrink-0'>
         <div className='flex flex-row items-center gap-8 h-full'>
           <DesktopFilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
           <DesktopFilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
@@ -53,12 +64,14 @@ const Header: FunctionComponent<Props> = ({
           <DesktopFilterView label='Reusability Level' items={allReusabilityLevels} selectedItems={selectedReusabilityLevels} setSelectedItems={setSelectedReusabilityLevels} />
           <DesktopFilterView label='Region' items={allRegions} selectedItems={selectedRegions} setSelectedItems={setSelectedRegions} />
         </div>
+        <Image src='/images/logo.svg' alt='Rocket Index' width={36} height={36} draggable={false} />
       </div>
     );
   } else {
     return (
-      <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 px-4 gap-4 shrink-0'>
+      <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 pl-4 pr-3 gap-4 shrink-0'>
         <Menu color='var(--foreground)' width='20px' height='20px' className='cursor-pointer' onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
+        <Image src='/images/logo.svg' alt='Rocket Index' width={28} height={28} draggable={false} />
         <div className={`absolute top-full left-0 w-full h-[calc(100dvh-48px)] overflow-y-scroll bg-background transition-transform duration-300 px-[18px] py-2 flex flex-col ${ isMenuExpanded ? 'translate-x-0' : '-translate-x-full' }`}>
           <MobileFilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
           <MobileFilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
