@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { FunctionComponent } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
@@ -12,9 +14,10 @@ import { Vehicle } from '@/data/Vehicles';
 
 type Props = {
   vehicle: Vehicle;
+  hasPriority: boolean;
 }
 
-const VehicleView: FunctionComponent<Props> = ({ vehicle }) => {
+const VehicleView: FunctionComponent<Props> = ({ vehicle, hasPriority }) => {
 
   const isMdScreen = useMediaQuery({ query: '(min-width: 768px)' });
   
@@ -51,8 +54,14 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle }) => {
   return (
     <div className='relative w-full xl:w-1/2 h-[calc((100vh-48px)/2)] cursor-pointer bg-[#202020]' onClick={() => window.open(vehicle.website, '_blank')}>
       {/* Background Image */}
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={imageURL} alt={imageAlt} className='absolute top-0 left-0 w-full h-full object-cover select-none' draggable="false" />
+      <Image 
+        src={imageURL} 
+        alt={imageAlt} 
+        fill
+        className='object-cover select-none'
+        draggable={false}
+        priority={hasPriority}
+      />
       { vehicle.image ? null : (
         <div className='absolute top-0 left-0 w-full h-full flex items-center justify-center'>
           <span className='text-xs font-bold'>NO IMAGE</span>

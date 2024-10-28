@@ -32,7 +32,7 @@ const VehicleList: FunctionComponent<Props> = ({
 
   return (
     <div className='flex flex-row flex-wrap'>
-      { filteredVehicles.map((vehicle) => <VehicleView key={vehicle.id} vehicle={vehicle} />) }
+      { filteredVehicles.map((vehicle, index) => <VehicleView key={vehicle.id} vehicle={vehicle} hasPriority={index < 4} />) }
     </div>
   );
 }
