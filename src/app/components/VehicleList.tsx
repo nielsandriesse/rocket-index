@@ -6,7 +6,6 @@ import { providers } from '@/data/Providers';
 import { vehicles } from '@/data/Vehicles';
 
 type Props = {
-  isMenuExpanded: boolean;
   selectedProviders: string[];
   selectedStatuses: string[];
   selectedPayloadCapacities: string[];
@@ -15,7 +14,6 @@ type Props = {
 }
 
 const VehicleList: FunctionComponent<Props> = ({
-  isMenuExpanded,
   selectedProviders,
   selectedStatuses,
   selectedPayloadCapacities,
@@ -33,7 +31,7 @@ const VehicleList: FunctionComponent<Props> = ({
   });
 
   return (
-    <div className={`flex flex-row flex-wrap ${ isMenuExpanded ? 'h-[calc(100dvh-48px-96px)] overflow-hidden' : 'h-auto overflow-auto' }`}>
+    <div className='flex flex-row flex-wrap'>
       { filteredVehicles.map((vehicle) => <VehicleView key={vehicle.id} vehicle={vehicle} />) }
     </div>
   );

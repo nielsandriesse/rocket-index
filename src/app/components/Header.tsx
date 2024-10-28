@@ -45,7 +45,7 @@ const Header: FunctionComponent<Props> = ({
   const isLgScreen = useMediaQuery({ query: '(min-width: 1024px)' });
   if (isLgScreen) {
     return (
-      <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 px-8 gap-8'>
+      <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 px-8 gap-8 shrink-0'>
         <div className='flex flex-row items-center gap-8 h-full'>
           <DesktopFilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
           <DesktopFilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
@@ -57,9 +57,9 @@ const Header: FunctionComponent<Props> = ({
     );
   } else {
     return (
-      <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 px-4 gap-4'>
+      <div className='relative h-[48px] z-10 flex flex-row items-center justify-between border-b border-b-white20 px-4 gap-4 shrink-0'>
         <Menu color='var(--foreground)' width='20px' height='20px' className='cursor-pointer' onClick={() => setIsMenuExpanded(!isMenuExpanded)} />
-        <div className={`absolute top-full left-0 w-full h-[calc(100dvh-48px)] bg-background transition-transform duration-300 px-[18px] py-2 flex flex-col ${ isMenuExpanded ? 'translate-x-0' : '-translate-x-full' }`}>
+        <div className={`absolute top-full left-0 w-full h-[calc(100dvh-48px)] overflow-y-scroll bg-background transition-transform duration-300 px-[18px] py-2 flex flex-col ${ isMenuExpanded ? 'translate-x-0' : '-translate-x-full' }`}>
           <MobileFilterView label='Provider' items={providers.map((provider) => ({ label: provider.name, value: provider.id }))} selectedItems={selectedProviders} setSelectedItems={setSelectedProviders} />
           <MobileFilterView label='Status' items={allStatuses} selectedItems={selectedStatuses} setSelectedItems={setSelectedStatuses} />
           <MobileFilterView label='Payload Capacity' items={allPayloadCapacities} selectedItems={selectedPayloadCapacities} setSelectedItems={setSelectedPayloadCapacities} />

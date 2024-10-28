@@ -22,7 +22,7 @@ const App: FunctionComponent = () => {
   const [selectedRegions, setSelectedRegions] = useState<string[]>(allRegions.map((region) => region.value));
 
   return (
-    <div className='flex flex-col w-full h-full'>
+    <div className={`flex flex-col w-full h-[100dvh] ${ isMenuExpanded ? 'overflow-hidden' : 'overflow-auto' }`}>
       <Header
         isMenuExpanded={isMenuExpanded}
         setIsMenuExpanded={setIsMenuExpanded}
@@ -38,7 +38,6 @@ const App: FunctionComponent = () => {
         setSelectedRegions={setSelectedRegions}
       />
       <VehicleList
-        isMenuExpanded={isMenuExpanded}
         selectedProviders={selectedProviders}
         selectedStatuses={selectedStatuses}
         selectedPayloadCapacities={selectedPayloadCapacities}
