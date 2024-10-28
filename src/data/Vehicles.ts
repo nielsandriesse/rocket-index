@@ -330,5 +330,16 @@ export const vehicles: Vehicle[] = [
     payloadCapacity: 'medium-lift',
     reusabilityLevel: 'partially-reusable',
     website: 'https://www.galactic-energy.cn/index.php/En/List/cid/15',
+  },
+  {
+    id: 'soyuz-2',
+    name: 'Soyuz 2',
+    provider: 'roscosmos',
+    image: '/images/soyuz-2.webp',
+    photoCredit: 'Roscosmos',
+    status: 'operational',
+    payloadCapacity: 'medium-lift',
+    reusabilityLevel: 'non-reusable',
+    website: 'https://en.wikipedia.org/wiki/Soyuz-2',
   }
 ];
