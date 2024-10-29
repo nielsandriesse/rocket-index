@@ -38,6 +38,12 @@ export const providers = [
     regions: [ 'european-union', 'germany' ],
   },
   {
+    id: 'isar-aerospace',
+    name: 'Isar Aerospace',
+    website: 'https://www.isaraerospace.com/',
+    regions: [ 'european-union', 'germany' ],
+  },
+  {
     id: 'arianespace',
     name: 'Arianespace',
     website: 'https://www.arianespace.com/',
@@ -77,6 +83,30 @@ export const providers = [
     id: 'avio',
     name: 'Avio',
     website: 'https://www.avio.com/',
-    regions: [ 'italy' ],
+    regions: [ 'european-union', 'italy' ],
   },
+  {
+    id: 'hy-impulse',
+    name: 'HyImpulse',
+    website: 'https://www.hyimpulse.de/en/',
+    regions: [ 'european-union', 'germany' ],
+  },
+  {
+    id: 'black-arrow',
+    name: 'Black Arrow',
+    website: 'https://blackarrow.space/',
+    regions: [ 'united-kingdom' ],
+  },
+  {
+    id: 'latitude',
+    name: 'Latitude',
+    website: 'https://www.latitude.eu/',
+    regions: [ 'european-union', 'france' ],
+  },
+  {
+    id: 'maiaspace',
+    name: 'maiaspace',
+    website: 'https://www.maia-space.com/',
+    regions: [ 'european-union', 'france' ],
+  }
 ].sort((a, b) => a.name!.localeCompare(b.name!)) as Provider[];
