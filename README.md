@@ -6,6 +6,10 @@ To add or edit a vehicle or launch provider, update the files in `src/data` and 
 - To keep the index clean, please don't add all the variations of a given vehicle (e.g. Falcon 9 Full Thrust vs Falcon 9 Block 5).
 - The vehicle must be active or in development (i.e. no retired vehicles).
 
+### Feature suggestions
+
+Have an idea for a feature? Let me know by [opening an issue](https://github.com/nielsandriesse/rocket-index/issues)!
+
 ### Photo credits
 
 Do you see a photo that isn't credited correctly? Please let me know or make a pull request to fix it.
