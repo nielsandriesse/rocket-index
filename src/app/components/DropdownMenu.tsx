@@ -11,11 +11,12 @@ export type DropdownMenuItem = {
 type Props = {
   className: string;
   items: DropdownMenuItem[];
+  mode: 'single' | 'multiple';
   selectedItems: string[];
   onItemsSelected: (items: string[]) => void;
 }
 
-const DropdownMenu: FunctionComponent<Props> = ({ className, items, selectedItems, onItemsSelected }) => {
+const DropdownMenu: FunctionComponent<Props> = ({ className, items, mode, selectedItems, onItemsSelected }) => {
   return (
     <div className={`z-10 flex flex-col bg-black60 py-2 backdrop-blur-md ${className}`}>
       { items.map((item) => {
@@ -25,8 +26,13 @@ const DropdownMenu: FunctionComponent<Props> = ({ className, items, selectedItem
             key={item.value}
             className='px-4 py-2 cursor-pointer select-none flex flex-row justify-between gap-2 hover:bg-darkGray'
             onClick={() => {
-              const newSelectedItems = isSelected ? selectedItems.filter((selectedItem) => selectedItem !== item.value) : [ ...selectedItems, item.value ];
-              onItemsSelected(newSelectedItems);
+              if (mode === 'single') {
+                if (isSelected) { return; }
+                onItemsSelected([ item.value ]);
+              } else {
+                const newSelectedItems = isSelected ? selectedItems.filter((selectedItem) => selectedItem !== item.value) : [ ...selectedItems, item.value ];
+                onItemsSelected(newSelectedItems);
+              }
             }}
           >
             <span className='text-xs'>{ item.label.toUpperCase() }</span>

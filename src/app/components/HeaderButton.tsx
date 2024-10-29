@@ -7,7 +7,7 @@ type Props = {
   onClick: () => void;
 }
 
-const FilterButton: FunctionComponent<Props> = ({ label, onClick }) => {
+const HeaderButton: FunctionComponent<Props> = ({ label, onClick }) => {
   return (
     <div
       className='flex flex-row items-center gap-2 cursor-pointer select-none shrink-0'
@@ -18,4 +18,4 @@ const FilterButton: FunctionComponent<Props> = ({ label, onClick }) => {
   );
 }
 
-export default FilterButton;
+export default HeaderButton;
