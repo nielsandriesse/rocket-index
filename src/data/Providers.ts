@@ -98,6 +98,12 @@ export const providers = [
     regions: [ 'united-kingdom' ],
   },
   {
+    id: 'orbex',
+    name: 'Orbex',
+    website: 'https://orbex.space/',
+    regions: [ 'united-kingdom' ],
+  },
+  {
     id: 'latitude',
     name: 'Latitude',
     website: 'https://www.latitude.eu/',
@@ -108,5 +114,17 @@ export const providers = [
     name: 'maiaspace',
     website: 'https://www.maia-space.com/',
     regions: [ 'european-union', 'france' ],
+  },
+  {
+    id: 'sirius-space',
+    name: 'Sirius Space',
+    website: 'https://www.sirius-space.com/',
+    regions: [ 'european-union', 'italy' ],
+  },
+  {
+    id: 'skyrora',
+    name: 'Skyrora',
+    website: 'https://www.skyrora.com/',
+    regions: [ 'united-kingdom' ],
   }
 ].sort((a, b) => a.name!.localeCompare(b.name!)) as Provider[];
