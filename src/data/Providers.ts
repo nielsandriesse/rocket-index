@@ -38,6 +38,24 @@ export const providers = [
     regions: [ 'united-states' ],
   },
   {
+    id: 'stoke-space',
+    name: 'Stoke Space',
+    website: 'https://www.stokespace.com/',
+    regions: [ 'united-states' ],
+  },
+  {
+    id: 'firefly-aerospace',
+    name: 'Firefly Aerospace',
+    website: 'https://fireflyspace.com/',
+    regions: [ 'united-states' ],
+  },
+  {
+    id: 'astra',
+    name: 'Astra',
+    website: 'https://astra.com/',
+    regions: [ 'united-states' ],
+  },
+  {
     id: 'nasa',
     name: 'NASA',
     website: 'https://www.nasa.gov/',
@@ -83,6 +101,18 @@ export const providers = [
     id: 'galactic-energy',
     name: 'Galactic Energy',
     website: 'https://www.galactic-energy.cn//index.php/En',
+    regions: [ 'china' ],
+  },
+  {
+    id: 'orienspace',
+    name: 'Orienspace',
+    website: 'https://www.orienspace.com/',
+    regions: [ 'china' ],
+  },
+  {
+    id: 'i-space',
+    name: 'i-Space',
+    website: 'https://www.i-space.co.jp/',
     regions: [ 'china' ],
   },
   {
