@@ -10,6 +10,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <title>Rocket Index</title>
         <meta name="title" content="Rocket Index" />
         <meta name="description" content="An overview of orbital class rockets, both active and in development." />
+        <link rel="canonical" href="https://therocketindex.com"/>
         {/* X */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://therocketindex.com" />
