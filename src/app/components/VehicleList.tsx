@@ -36,7 +36,9 @@ const VehicleList: FunctionComponent<Props> = ({
         && selectedReusabilityLevels.includes(vehicle.reusabilityLevel)
         && provider.regions.some((region) => selectedRegions.includes(region));
     });
-    if (selectedSortModes.includes('shuffle')) {
+    if (selectedSortModes.includes('alphabetical')) {
+      setFilteredVehicles(_filteredVehicles.sort((a, b) => a.name.localeCompare(b.name)));
+    } else if (selectedSortModes.includes('shuffle')) {
       setFilteredVehicles(_filteredVehicles.sort(() => Math.random() - 0.5));
     } else {
       setFilteredVehicles(_filteredVehicles);
