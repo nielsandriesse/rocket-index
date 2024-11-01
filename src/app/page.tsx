@@ -20,7 +20,7 @@ const App: FunctionComponent = () => {
   const [selectedPayloadCapacities, setSelectedPayloadCapacities] = useState<string[]>(allPayloadCapacities.map((payloadCapacity) => payloadCapacity.value));
   const [selectedReusabilityLevels, setSelectedReusabilityLevels] = useState<string[]>(allReusabilityLevels.map((reusabilityLevel) => reusabilityLevel.value));
   const [selectedRegions, setSelectedRegions] = useState<string[]>(allRegions.map((region) => region.value));
-  const [selectedSortModes, setSelectedSortModes] = useState<string[]>([ 'default' ]);
+  const [selectedSortModes, setSelectedSortModes] = useState<string[]>([ 'editors-choice' ]);
 
   return (
     <div className={`flex flex-col w-full h-[100dvh] ${ isMenuExpanded ? 'overflow-hidden' : 'overflow-auto' }`}>

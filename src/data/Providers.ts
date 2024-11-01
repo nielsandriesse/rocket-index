@@ -128,6 +128,24 @@ export const providers = [
     regions: [ 'china' ],
   },
   {
+    id: 'deep-blue-aerospace',
+    name: 'Deep Blue Aerospace',
+    website: 'http://www.dbaspace.com/about.html',
+    regions: [ 'china' ],
+  },
+  {
+    id: 'link-space',
+    name: 'LinkSpace',
+    website: 'https://en.wikipedia.org/wiki/LinkSpace',
+    regions: [ 'china' ],
+  },
+  {
+    id: 'one-space',
+    name: 'One Space',
+    website: 'https://en.wikipedia.org/wiki/OneSpace',
+    regions: [ 'china' ],
+  },
+  {
     id: 'space-one',
     name: 'Space One',
     website: 'https://www.space-one.co.jp/index_e.html',
