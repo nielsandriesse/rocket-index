@@ -122,6 +122,12 @@ export const providers = [
     regions: [ 'china' ],
   },
   {
+    id: 'land-space',
+    name: 'LandSpace',
+    website: 'https://www.landspace.com/en',
+    regions: [ 'china' ],
+  },
+  {
     id: 'space-one',
     name: 'Space One',
     website: 'https://www.space-one.co.jp/index_e.html',

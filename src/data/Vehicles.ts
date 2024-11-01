@@ -607,6 +607,17 @@ export const vehicles: Vehicle[] = [
     website: 'https://en.wikipedia.org/wiki/Kuaizhou',
   },
   {
+    id: 'zhuque-2',
+    name: 'Zhuque-2',
+    provider: 'land-space',
+    image: '/images/zhuque-2.webp',
+    photoCredit: 'LandSpace',
+    status: 'operational',
+    payloadCapacity: 'medium-lift',
+    reusabilityLevel: 'non-reusable',
+    website: 'https://www.landspace.com/en/product.html',
+  },
+  {
     id: 'ceres-1',
     name: 'Ceres 1',
     provider: 'galactic-energy',
