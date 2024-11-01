@@ -116,6 +116,12 @@ export const providers = [
     regions: [ 'china' ],
   },
   {
+    id: 'expace',
+    name: 'Expace',
+    website: 'https://en.wikipedia.org/wiki/ExPace',
+    regions: [ 'china' ],
+  },
+  {
     id: 'space-one',
     name: 'Space One',
     website: 'https://www.space-one.co.jp/index_e.html',
