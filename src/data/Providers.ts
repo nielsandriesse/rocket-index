@@ -68,6 +68,12 @@ export const providers = [
     regions: [ 'united-states' ],
   },
   {
+    id: 'northrop-grumman',
+    name: 'Northrop Grumman',
+    website: 'https://www.northropgrumman.com/',
+    regions: [ 'united-states' ],
+  },
+  {
     id: 'pld-space',
     name: 'PLD Space',
     website: 'https://www.pldspace.com/',
