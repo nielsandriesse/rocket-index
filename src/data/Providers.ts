@@ -146,6 +146,24 @@ export const providers = [
     regions: [ 'china' ],
   },
   {
+    id: 'rocket-pi',
+    name: 'Rocket Pi',
+    website: '',
+    regions: [ 'china' ],
+  },
+  {
+    id: 'space-pioneer',
+    name: 'Space Pioneer',
+    website: 'https://www.spacepioneer.cc/',
+    regions: [ 'china' ],
+  },
+  {
+    id: 'cas-space',
+    name: 'CAS Space',
+    website: 'https://en.cas-space.com/',
+    regions: [ 'china' ],
+  },
+  {
     id: 'space-one',
     name: 'Space One',
     website: 'https://www.space-one.co.jp/index_e.html',
