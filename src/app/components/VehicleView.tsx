@@ -60,7 +60,7 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle, hasPriority }) => {
         alt={imageAlt} 
         fill
         className='object-cover select-none opacity-0 transition-opacity duration-300'
-        onLoadingComplete={(image) => image.classList.remove('opacity-0')}
+        onLoad={(event) => event.currentTarget.classList.remove('opacity-0')}
         draggable={false}
         priority={hasPriority}
       />
@@ -86,13 +86,13 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle, hasPriority }) => {
               </div>
               <span className='select-none'>{ payloadCapacity.label.toUpperCase() }</span>
             </div>
-            <Badge label={reusabilityLevel.label.toUpperCase()} color={reusabilityLevelColor} />
+            <Badge label={reusabilityLevel.label.toUpperCase()} color={reusabilityLevelColor} className={ isMdScreen ? '' : 'w-full' } />
           </div>
           <div className='flex flex-col md:flex-row items-center gap-1 md:gap-2 shrink-0'>
             { provider.regions.map((region) => {
               const data = _regionImageData[region]!;
               // eslint-disable-next-line @next/next/no-img-element
-              return <img key={region} src={data.url} alt={region} width={ isMdScreen ? '36px' : '30px' } height={`${ (isMdScreen ? 36 : 30) * data.aspectRatio}px`} className='select-none shrink-0 mt-[2px]' />
+              return <img key={region} src={data.url} alt={region} width='36px' height={`${ 36 * data.aspectRatio }px`} className='select-none shrink-0 mt-[2px]' />
             }) }
           </div>
         </div>
