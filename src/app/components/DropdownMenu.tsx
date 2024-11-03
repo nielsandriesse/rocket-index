@@ -13,10 +13,10 @@ type Props = {
   items: DropdownMenuItem[];
   mode: 'single' | 'multiple';
   selectedItems: string[];
-  onItemsSelected: (items: string[]) => void;
+  onSelectItems: (items: string[]) => void;
 }
 
-const DropdownMenu: FunctionComponent<Props> = ({ className, items, mode, selectedItems, onItemsSelected }) => {
+const DropdownMenu: FunctionComponent<Props> = ({ className, items, mode, selectedItems, onSelectItems }) => {
   return (
     <div className={`z-10 flex flex-col bg-black60 py-2 backdrop-blur-md ${className} max-h-[474px] overflow-y-scroll`}>
       { items.map((item) => {
@@ -28,10 +28,10 @@ const DropdownMenu: FunctionComponent<Props> = ({ className, items, mode, select
             onClick={() => {
               if (mode === 'single') {
                 if (isSelected) { return; }
-                onItemsSelected([ item.value ]);
+                onSelectItems([ item.value ]);
               } else {
                 const newSelectedItems = isSelected ? selectedItems.filter((selectedItem) => selectedItem !== item.value) : [ ...selectedItems, item.value ];
-                onItemsSelected(newSelectedItems);
+                onSelectItems(newSelectedItems);
               }
             }}
           >

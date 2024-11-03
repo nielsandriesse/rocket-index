@@ -20,7 +20,7 @@ type Props = {
 
 const VehicleView: FunctionComponent<Props> = ({ vehicle, hasPriority }) => {
 
-  const [isMdScreen, setIsMdScreen] = useState(false);
+  const [isMdScreen, setIsMdScreen] = useState(true);
 
   useEffect(() => {
     const handleResize = () => { setIsMdScreen(window.innerWidth >= 768) };

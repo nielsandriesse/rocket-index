@@ -4,6 +4,7 @@ import { FunctionComponent, useState } from 'react';
 
 import Footer from './components/Footer';
 import Header from './components/Header';
+import LegalModal from './components/DisclaimerModal';
 import VehicleList from './components/VehicleList';
 
 import { allPayloadCapacities } from '@/data/PayloadCapacities';
@@ -15,6 +16,7 @@ import { providers } from '@/data/Providers';
 const App: FunctionComponent = () => {
 
   const [isMenuExpanded, setIsMenuExpanded] = useState(false);
+  const [isShowingLegalModal, setIsShowingLegalModal] = useState(false);
   const [selectedProviders, setSelectedProviders] = useState<string[]>(providers.map((provider) => provider.id));
   const [selectedStatuses, setSelectedStatuses] = useState<string[]>(allStatuses.map((status) => status.value));
   const [selectedPayloadCapacities, setSelectedPayloadCapacities] = useState<string[]>(allPayloadCapacities.map((payloadCapacity) => payloadCapacity.value));
@@ -48,7 +50,8 @@ const App: FunctionComponent = () => {
         selectedRegions={selectedRegions}
         selectedSortModes={selectedSortModes}
       />
-      <Footer />
+      <Footer onLegalClick={() => { setIsShowingLegalModal(true) }} />
+      <LegalModal isShowing={isShowingLegalModal} onDismiss={() => { setIsShowingLegalModal(false) }} />
     </div>
   );
 }

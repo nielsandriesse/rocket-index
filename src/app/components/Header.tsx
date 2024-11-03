@@ -114,7 +114,7 @@ const DesktopFilterView: FunctionComponent<DesktopFilterViewProps> = ({ label, i
         items={items.map((item) => ({ label: item.label, value: item.value }))}
         mode={mode}
         selectedItems={selectedItems}
-        onItemsSelected={(items) => {
+        onSelectItems={(items) => {
           setSelectedItems(items);
           if (mode === 'single') { setIsMenuExpanded(false); }
         }}
