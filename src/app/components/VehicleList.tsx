@@ -46,7 +46,7 @@ const VehicleList: FunctionComponent<Props> = ({
   }, [ selectedProviders, selectedStatuses, selectedPayloadCapacities, selectedReusabilityLevels, selectedRegions, selectedSortModes ]);
 
   return (
-    <div className='flex flex-row flex-wrap'>
+    <div className='flex flex-row flex-wrap grow'>
       { filteredVehicles.map((vehicle, index) => <VehicleView key={vehicle.id} vehicle={vehicle} hasPriority={index < 4} />) }
     </div>
   );
