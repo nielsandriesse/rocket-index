@@ -1,3 +1,7 @@
+## Rocket Index
+
+An overview of orbital class rockets, both active and in development.
+
 ### Adding or editing a vehicle or launch provider
 
 To add or edit a vehicle or launch provider, update the files in `src/data` and make a pull request. I'll usually be able to merge it within a few days. A couple things to keep in mind:
@@ -12,4 +16,4 @@ Have an idea for a feature? Let me know by [opening an issue](https://github.com
 
 ### Photo credits
 
-Do you see a photo that isn't credited correctly? Please let me know or make a pull request to fix it.
+Do you see a photo that isn't credited correctly? Please let me know by [opening an issue](https://github.com/nielsandriesse/rocket-index/issues) or make a pull request to fix it.
