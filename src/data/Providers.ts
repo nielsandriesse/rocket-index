@@ -3,7 +3,7 @@ export type Provider = {
   id: string;
   name: string;
   website: string;
-  regions: ('european-union' | 'united-states' | 'china' | 'japan' | 'new-zealand' | 'spain' | 'germany' | 'france')[];
+  regions: string[];
 }
 
 export const providers = [
