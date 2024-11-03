@@ -19,7 +19,7 @@ const Footer: FunctionComponent<Props> = ({ onLegalClick }) => {
         </div>
       </div>
 
-      <div className='flex flex-col gap-[2px] md:items-end'>
+      <div className='flex flex-col gap-[2px] md:items-end md:text-right'>
         <span className='text-xs'>CREATED AND MAINTAINED BY NIELS ANDRIESSE</span>
         <span className='text-xs'><a href='#' onClick={onLegalClick} className='underline'>DISCLAIMER</a></span>
       </div>

@@ -14,7 +14,7 @@ const DisclaimerModal: FunctionComponent<Props> = ({ isShowing, onDismiss }) => 
       flex items-center justify-center md:p-8 bg-black50
       transition-opacity duration-300 ${ isShowing ? 'opacity-100' : 'opacity-0 pointer-events-none' }
     `}>
-      <div className='flex flex-col h-full md:h-auto md:max-w-[768px] md:max-h-full p-8 bg-background gap-4'>
+      <div className='flex flex-col h-full md:h-auto md:max-w-[768px] md:max-h-full p-4 md:p-8 bg-background gap-4'>
         <div className='flex flex-row justify-between'>
           <span className='font-bold'>Disclaimer</span>
           <Xmark color='var(--foreground)' width='24px' height='24px' className='cursor-pointer' onClick={() => onDismiss()} />
