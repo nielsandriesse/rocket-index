@@ -59,7 +59,8 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle, hasPriority }) => {
         src={imageURL} 
         alt={imageAlt} 
         fill
-        className='object-cover select-none'
+        className='object-cover select-none opacity-0 transition-opacity duration-300'
+        onLoadingComplete={(image) => image.classList.remove('opacity-0')}
         draggable={false}
         priority={hasPriority}
       />
