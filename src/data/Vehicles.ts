@@ -139,7 +139,7 @@ export const vehicles: Vehicle[] = [
     provider: 'firefly-aerospace',
     image: '/images/mlv.webp',
     photoCredit: 'Firefly Aerospace',
-    status: 'operational',
+    status: 'in-development',
     payloadCapacity: 'medium-lift',
     reusabilityLevel: 'partially-reusable',
     website: 'https://fireflyspace.com/mlv/',
