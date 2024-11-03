@@ -38,7 +38,8 @@ const VehicleView: FunctionComponent<Props> = ({ vehicle, hasPriority }) => {
     case 'small-lift': payloadCapacityIcon = smallLiftIcon; break;
     case 'medium-lift': payloadCapacityIcon = mediumLiftIcon; break;
     case 'heavy-lift': payloadCapacityIcon = heavyLiftIcon; break;
-    default: payloadCapacityIcon = superHeavyLiftIcon; break;
+    case 'super-heavy-lift': payloadCapacityIcon = superHeavyLiftIcon; break;
+    default: payloadCapacityIcon = null; break; // Should never occur
   }
   const reusabilityLevel = allReusabilityLevels.find((reusabilityLevel) => reusabilityLevel.value === vehicle.reusabilityLevel)!;
   let reusabilityLevelColor: string;

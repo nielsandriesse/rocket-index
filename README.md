@@ -10,6 +10,7 @@ To add or edit a vehicle or launch provider, update the files in `src/data` and 
 - To keep the index clean, please don't add all the variations of a given vehicle (e.g. Falcon 9 Full Thrust vs Falcon 9 Block 5).
 - The vehicle must be operational or in development (i.e. no retired vehicles).
 - For the purposes of this index, a vehicle is considered operational if it has reached orbit successfully at least once.
+- Photos should be in WEBP format.
 
 ### Feature suggestions
 

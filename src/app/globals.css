@@ -12,17 +12,17 @@
 :root {
   --background: #000000;
   --foreground: #ffffff;
+  --black10: #0000001a;
   --black20: #00000033;
   --black50: #00000080;
   --black60: #00000099;
   --white10: #ffffff1a;
   --white20: #ffffff33;
   --white50: #ffffff80;
-  --darkGray: #1A1A1A;
+  --darkGray: #1a1a1a;
   --lightGreen: #09bc62;
   --lightRed: #e83939;
   --lightBlue: #3c9fd7;
-  --lightOrange: #efa63a;
 }
 
 body {

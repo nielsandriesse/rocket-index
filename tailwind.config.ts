@@ -19,7 +19,6 @@ const config: Config = {
         lightGreen: "var(--lightGreen)",
         lightRed: "var(--lightRed)",
         lightBlue: "var(--lightBlue)",
-        lightOrange: "var(--lightOrange)",
       },
     },
   },
