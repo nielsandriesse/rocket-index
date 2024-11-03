@@ -18,7 +18,7 @@ type Props = {
 
 const DropdownMenu: FunctionComponent<Props> = ({ className, items, mode, selectedItems, onSelectItems }) => {
   return (
-    <div className={`z-10 flex flex-col bg-black60 py-2 backdrop-blur-md ${className} max-h-[474px] overflow-y-scroll`}>
+    <div className={`z-10 flex flex-col bg-black60 py-2 backdrop-blur-md ${className} max-h-[456px] overflow-y-scroll`}>
       { items.map((item) => {
         const isSelected = selectedItems.includes(item.value);
         return (
