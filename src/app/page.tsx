@@ -2,9 +2,9 @@
 
 import { FunctionComponent, useState } from 'react';
 
+import DisclaimerModal from './components/DisclaimerModal';
 import Footer from './components/Footer';
 import Header from './components/Header';
-import LegalModal from './components/DisclaimerModal';
 import VehicleList from './components/VehicleList';
 
 import { allPayloadCapacities } from '@/data/PayloadCapacities';
@@ -51,7 +51,7 @@ const App: FunctionComponent = () => {
         selectedSortModes={selectedSortModes}
       />
       <Footer onLegalClick={() => { setIsShowingLegalModal(true) }} />
-      <LegalModal isShowing={isShowingLegalModal} onDismiss={() => { setIsShowingLegalModal(false) }} />
+      <DisclaimerModal isShowing={isShowingLegalModal} onDismiss={() => { setIsShowingLegalModal(false) }} />
     </div>
   );
 }
