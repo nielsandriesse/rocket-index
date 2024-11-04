@@ -62,6 +62,18 @@ export const providers = [
     regions: [ 'united-states' ],
   },
   {
+    id: 'aerojet-rocketdyne',
+    name: 'Aerojet Rocketdyne',
+    website: 'https://en.wikipedia.org/wiki/Aerojet_Rocketdyne',
+    regions: [ 'united-states' ],
+  },
+  {
+    id: 'boeing',
+    name: 'Boeing',
+    website: 'https://www.boeing.com/',
+    regions: [ 'united-states' ],
+  },
+  {
     id: 'united-launch-alliance',
     name: 'United Launch Alliance',
     website: 'https://www.ulalaunch.com/',
@@ -71,6 +83,12 @@ export const providers = [
     id: 'northrop-grumman',
     name: 'Northrop Grumman',
     website: 'https://www.northropgrumman.com/',
+    regions: [ 'united-states' ],
+  },
+  {
+    id: 'vector-launch',
+    name: 'Vector Launch',
+    website: 'https://vector-launch.com/',
     regions: [ 'united-states' ],
   },
   {
@@ -104,6 +122,18 @@ export const providers = [
     regions: [ 'china' ],
   },
   {
+    id: 'china-academy-of-launch-vehicle-technology',
+    name: 'China Academy of Launch Vehicle Technology',
+    website: 'https://en.wikipedia.org/wiki/China_Academy_of_Launch_Vehicle_Technology',
+    regions: [ 'china' ],
+  },
+  {
+    id: 'shanghai-academy-of-spaceflight-technology',
+    name: 'Shanghai Academy of Spaceflight Technology',
+    website: 'https://en.wikipedia.org/wiki/Shanghai_Academy_of_Spaceflight_Technology',
+    regions: [ 'china' ],
+  },
+  {
     id: 'galactic-energy',
     name: 'Galactic Energy',
     website: 'https://www.galactic-energy.cn//index.php/En',
@@ -123,7 +153,7 @@ export const providers = [
   },
   {
     id: 'expace',
-    name: 'Expace',
+    name: 'ExPace',
     website: 'https://en.wikipedia.org/wiki/ExPace',
     regions: [ 'china' ],
   },
@@ -176,15 +206,57 @@ export const providers = [
     regions: [ 'japan' ],
   },
   {
+    id: 'interstellar-technologies',
+    name: 'Interstellar Technologies',
+    website: 'https://www.istellartech.com/',
+    regions: [ 'japan' ],
+  },
+  {
     id: 'japan-aerospace-exploration-agency',
     name: 'Japan Aerospace Exploration Agency',
     website: 'https://global.jaxa.jp/',
     regions: [ 'japan' ],
   },
   {
+    id: 'mitsubishi-heavy-industries',
+    name: 'Mitsubishi Heavy Industries',
+    website: 'https://www.mhi.com/',
+    regions: [ 'japan' ],
+  },
+  {
+    id: 'gilmour-space-technologies',
+    name: 'Gilmour Space Technologies',
+    website: 'https://www.gspace.com/',
+    regions: [ 'australia' ],
+  },
+  {
+    id: 'perigee-aerospace',
+    name: 'Perigee Aerospace',
+    website: 'http://perigee.kr/',
+    regions: [ 'south-korea' ],
+  },
+  {
+    id: 'korea-aerospace-research-institute',
+    name: 'Korea Aerospace Research Institute',
+    website: 'https://www.kari.re.kr/eng.do',
+    regions: [ 'south-korea' ],
+  },
+  {
     id: 'roscosmos',
     name: 'Roscosmos',
     website: 'https://en.wikipedia.org/wiki/Roscosmos',
+    regions: [ 'russia' ],
+  },
+  {
+    id: 'rsc-energia',
+    name: 'RSC Energia',
+    website: 'https://en.wikipedia.org/wiki/Energia_(corporation)',
+    regions: [ 'russia' ],
+  },
+  {
+    id: 'khrunichev-state-research-and-production-space-center',
+    name: 'Khrunichev State Research and Production Space Center',
+    website: 'https://en.wikipedia.org/wiki/Khrunichev_State_Research_and_Production_Space_Center',
     regions: [ 'russia' ],
   },
   {
@@ -227,12 +299,48 @@ export const providers = [
     id: 'sirius-space',
     name: 'Sirius Space',
     website: 'https://www.sirius-space.com/',
-    regions: [ 'european-union', 'italy' ],
+    regions: [ 'european-union', 'france' ],
   },
   {
     id: 'skyrora',
     name: 'Skyrora',
     website: 'https://www.skyrora.com/',
     regions: [ 'united-kingdom' ],
+  },
+  {
+    id: 'brazilian-general-command-for-aerospace-technology',
+    name: 'Brazilian General Command for Aerospace Technology',
+    website: 'https://en.wikipedia.org/wiki/Institute_of_Aeronautics_and_Space',
+    regions: [ 'brazil' ],
+  },
+  {
+    id: 'argentinian-national-space-activities-commission',
+    name: 'Argentinian National Space Activities Commission',
+    website: 'https://en.wikipedia.org/wiki/National_Space_Activities_Commission',
+    regions: [ 'argentina' ],
+  },
+  {
+    id: 'israel-space-agency',
+    name: 'Israel Space Agency',
+    website: 'https://www.space.gov.il/en',
+    regions: [ 'israel' ],
+  },
+  {
+    id: 'pivdenne',
+    name: 'Pivdenne',
+    website: 'https://en.wikipedia.org/wiki/KB_Pivdenne',
+    regions: [ 'ukraine' ],
+  },
+  {
+    id: 'pivdenmash',
+    name: 'Pivdenmash',
+    website: 'https://en.wikipedia.org/wiki/PA_Pivdenmash',
+    regions: [ 'ukraine' ],
+  },
+  {
+    id: 'khartron',
+    name: 'Khartron',
+    website: 'https://en.wikipedia.org/wiki/Khartron',
+    regions: [ 'ukraine' ],
   }
 ].sort((a, b) => a.name!.localeCompare(b.name!)) as Provider[];

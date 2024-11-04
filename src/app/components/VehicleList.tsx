@@ -4,7 +4,7 @@ import { FunctionComponent, useEffect, useState } from 'react';
 
 import VehicleView from './VehicleView';
 
-import { providers } from '@/data/Providers';
+import { providers as _providers } from '@/data/Providers';
 import { Vehicle, vehicles } from '@/data/Vehicles';
 
 type Props = {
@@ -29,12 +29,12 @@ const VehicleList: FunctionComponent<Props> = ({
 
   useEffect(() => {
     const _filteredVehicles = vehicles.filter((vehicle) => {
-      const provider = providers.find((provider) => provider.id === vehicle.provider)!;
-      return selectedProviders.includes(vehicle.provider)
+      const providers = _providers.filter((provider) => vehicle.providers.includes(provider.id));
+      return selectedProviders.some((provider) => providers.map((p) => p.id).includes(provider))
         && selectedStatuses.includes(vehicle.status)
         && selectedPayloadCapacities.includes(vehicle.payloadCapacity)
         && selectedReusabilityLevels.includes(vehicle.reusabilityLevel)
-        && provider.regions.some((region) => selectedRegions.includes(region));
+        && providers.map((p) => p.regions).flat().some((region) => selectedRegions.includes(region));
     });
     if (selectedSortModes.includes('alphabetical')) {
       setFilteredVehicles(_filteredVehicles.sort((a, b) => a.name.localeCompare(b.name)));
