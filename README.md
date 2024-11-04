@@ -1,6 +1,6 @@
 ## Rocket Index
 
-An overview of orbital class rockets, both active and in development.
+A (hopefully) complete, visually appealing list of orbital class rockets, both active and in development.
 
 ### Adding or editing a vehicle or launch provider
 
