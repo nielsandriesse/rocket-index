@@ -342,5 +342,23 @@ export const providers = [
     name: 'Khartron',
     website: 'https://en.wikipedia.org/wiki/Khartron',
     regions: [ 'ukraine' ],
+  },
+  {
+    id: 'agnikul-cosmos',
+    name: 'Agnikul Cosmos',
+    website: 'https://agnikul.in/#/',
+    regions: [ 'india' ],
+  },
+  {
+    id: 'indian-space-research-organization',
+    name: 'Indian Space Research Organization',
+    website: 'https://www.isro.gov.in/',
+    regions: [ 'india' ],
+  },
+  {
+    id: 'skyroot-aerospace',
+    name: 'Skyroot Aerospace',
+    website: 'https://skyroot.in/',
+    regions: [ 'india' ],
   }
 ].sort((a, b) => a.name!.localeCompare(b.name!)) as Provider[];

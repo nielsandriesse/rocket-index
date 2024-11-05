@@ -18,6 +18,7 @@ export const allRegions = [
   { label: 'Argentina', value: 'argentina' },
   { label: 'Israel', value: 'israel' },
   { label: 'Ukraine', value: 'ukraine' },
+  { label: 'India', value: 'india' },
 ].sort((a, b) => a.label.localeCompare(b.label)) as DropdownMenuItem[];
 
 export type RegionImageData = {
@@ -43,4 +44,5 @@ export const regionImageData: Record<string, RegionImageData> = {
   'argentina': { url: 'https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg', aspectRatio: 500/800 },
   'israel': { url: 'https://upload.wikimedia.org/wikipedia/commons/d/d4/Flag_of_Israel.svg', aspectRatio: 582/800 },
   'ukraine': { url: 'https://upload.wikimedia.org/wikipedia/commons/4/49/Flag_of_Ukraine.svg', aspectRatio: 533/800 },
+  'india': { url: 'https://upload.wikimedia.org/wikipedia/en/4/41/Flag_of_India.svg', aspectRatio: 533/800 },
 }
