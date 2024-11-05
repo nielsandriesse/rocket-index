@@ -360,5 +360,11 @@ export const providers = [
     name: 'Skyroot Aerospace',
     website: 'https://skyroot.in/',
     regions: [ 'india' ],
+  },
+  {
+    id: 'reaction-dynamics',
+    name: 'Reaction Dynamics',
+    website: 'https://www.reactiondynamics.space/old-home-4',
+    regions: [ 'canada' ],
   }
 ].sort((a, b) => a.name!.localeCompare(b.name!)) as Provider[];

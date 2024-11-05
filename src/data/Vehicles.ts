@@ -1093,6 +1093,17 @@ export const vehicles: Vehicle[] = [
     website: 'https://skyroot.in/',
   },
   {
+    id: 'aurora',
+    name: 'Aurora',
+    providers: [ 'reaction-dynamics' ],
+    image: '/images/aurora.webp',
+    photoCredit: 'Reaction Dynamics',
+    status: 'in-development',
+    payloadCapacity: 'small-lift',
+    reusabilityLevel: 'non-reusable',
+    website: 'https://www.reactiondynamics.com/aurora',
+  },
+  {
     id: 'vlm-1',
     name: 'VLM-1',
     providers: [ 'brazilian-general-command-for-aerospace-technology' ],
